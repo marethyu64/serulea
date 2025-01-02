@@ -1,0 +1,71 @@
+[gd_scene load_steps=12 format=3 uid="uid://c4li0n6g1bb2r"]
+
+[ext_resource type="Script" path="res://Player/player.gd" id="1_4d0kg"]
+[ext_resource type="Texture2D" uid="uid://bc8syrlk44o0l" path="res://Art Assets/lotus_placeholder.png" id="1_ldxst"]
+[ext_resource type="Script" path="res://Player/lotus.gd" id="2_sjvvq"]
+[ext_resource type="Texture2D" uid="uid://cwbluf27ru1f2" path="res://Art Assets/calin_placeholder.png" id="2_v32up"]
+[ext_resource type="Script" path="res://Player/calin.gd" id="4_7nmco"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_youau"]
+atlas = ExtResource("1_ldxst")
+region = Rect2(0, 0, 110, 160)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pbbwo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_youau")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ipfjm"]
+radius = 54.0
+height = 174.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7u5ne"]
+atlas = ExtResource("2_v32up")
+region = Rect2(0, 0, 110, 140)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5hjig"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7u5ne")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qxfia"]
+radius = 55.0
+height = 152.0
+
+[node name="Player" type="Node2D"]
+script = ExtResource("1_4d0kg")
+
+[node name="Lotus" type="CharacterBody2D" parent="."]
+z_index = 1
+position = Vector2(-100, 0)
+collision_mask = 4
+script = ExtResource("2_sjvvq")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Lotus"]
+sprite_frames = SubResource("SpriteFrames_pbbwo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lotus"]
+shape = SubResource("CapsuleShape2D_ipfjm")
+
+[node name="Calin" type="CharacterBody2D" parent="."]
+position = Vector2(100, 0)
+collision_mask = 4
+script = ExtResource("4_7nmco")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Calin"]
+sprite_frames = SubResource("SpriteFrames_5hjig")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Calin"]
+shape = SubResource("CapsuleShape2D_qxfia")

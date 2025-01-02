@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://b8j44hd588xbs"]
+
+[ext_resource type="PackedScene" uid="uid://c4li0n6g1bb2r" path="res://Player/player.tscn" id="1_wqug5"]
+[ext_resource type="PackedScene" uid="uid://cqo0jlkvqo2qy" path="res://Puzzles/energy_tether.tscn" id="2_jl8gt"]
+[ext_resource type="PackedScene" uid="uid://8njumatelkbj" path="res://Puzzles/laser.tscn" id="3_xfhw2"]
+
+[node name="World" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_wqug5")]
+position = Vector2(509, 172)
+
+[node name="Energy Tether" parent="." instance=ExtResource("2_jl8gt")]
+position = Vector2(862, 305)
+
+[node name="Laser" parent="." instance=ExtResource("3_xfhw2")]
+position = Vector2(244, 461)
