@@ -1,0 +1,94 @@
+[gd_scene load_steps=8 format=3 uid="uid://v5mvyp60paw4"]
+
+[ext_resource type="Texture2D" uid="uid://cacdir4vupylu" path="res://Scenes/scene1_hallway.png" id="1_klfgh"]
+[ext_resource type="Texture2D" uid="uid://c61u2d00asux1" path="res://Scenes/particle.png" id="2_6y8qk"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_nds1g"]
+blend_mode = 1
+
+[sub_resource type="Gradient" id="Gradient_4ibor"]
+offsets = PackedFloat32Array(0, 0.205387, 0.767677, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_dqq2n"]
+gradient = SubResource("Gradient_4ibor")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_5hggc"]
+particle_flag_disable_z = true
+emission_shape_scale = Vector3(500, 300, 1)
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+direction = Vector3(0, 0, 0)
+spread = 1.0
+initial_velocity_max = 15.0
+gravity = Vector3(0, 10, 0)
+scale_min = 0.0
+color = Color(1, 0.916667, 0.8, 1)
+color_ramp = SubResource("GradientTexture1D_dqq2n")
+hue_variation_min = -2.23517e-08
+hue_variation_max = 0.02
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_o731o"]
+polygon = PackedVector2Array(722, 223, -135, 253, -157, -165, -226, -165, -224, -86, -153, -88, -151, -59, -226, -58, -255, 241, -700, 249, -703, -281, 725, -275)
+
+[node name="Scene1Hallway" type="Sprite2D"]
+position = Vector2(960, 540)
+texture = ExtResource("1_klfgh")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+material = SubResource("CanvasItemMaterial_nds1g")
+position = Vector2(53, -36)
+scale = Vector2(1.2, 0.68)
+amount = 10
+process_material = SubResource("ParticleProcessMaterial_5hggc")
+texture = ExtResource("2_6y8qk")
+visibility_rect = Rect2(-600, -300, 1100, 600)
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+rotation = 1.21649
+color = Color(0.819507, 0.894381, 0.953086, 1)
+energy = 0.4
+blend_mode = 2
+shadow_color = Color(0, 0, 0, 1)
+shadow_filter = 2
+shadow_filter_smooth = 5.0
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+modulate = Color(1, 1, 1, 0.619608)
+position = Vector2(-3, -1)
+occluder = SubResource("OccluderPolygon2D_o731o")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.0862745, 0.0745098, 0.168627, 1)
+
+[node name="Red Glows" type="Node" parent="."]
+
+[node name="PointLight2D2" type="PointLight2D" parent="Red Glows"]
+position = Vector2(1484, 459)
+scale = Vector2(34.4, 21.7813)
+color = Color(0.360784, 0.105882, 0.0509804, 0.333333)
+texture = ExtResource("2_6y8qk")
+
+[node name="PointLight2D3" type="PointLight2D" parent="Red Glows"]
+position = Vector2(364, 565)
+scale = Vector2(34.4, 21.7813)
+color = Color(0.360784, 0.105882, 0.0509804, 0.333333)
+texture = ExtResource("2_6y8qk")
+
+[node name="PointLight2D4" type="PointLight2D" parent="Red Glows"]
+position = Vector2(775, 406)
+scale = Vector2(34.4, 18.8907)
+color = Color(0.360784, 0.105882, 0.0509804, 0.333333)
+texture = ExtResource("2_6y8qk")
+
+[node name="PointLight2D5" type="PointLight2D" parent="Red Glows"]
+position = Vector2(491.5, 772)
+scale = Vector2(42.1, 21.7813)
+color = Color(0.360784, 0.105882, 0.0509804, 0.333333)
+texture = ExtResource("2_6y8qk")
+
+[node name="PointLight2D6" type="PointLight2D" parent="Red Glows"]
+position = Vector2(1653, 594)
+scale = Vector2(34.4, 21.7813)
+color = Color(0.360784, 0.105882, 0.0509804, 0.333333)
+texture = ExtResource("2_6y8qk")

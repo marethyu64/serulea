@@ -1,0 +1,120 @@
+[gd_scene load_steps=8 format=3 uid="uid://c8vf4yp1nro40"]
+
+[ext_resource type="Texture2D" uid="uid://3wxchct4us62" path="res://Scenes/scene1_bedroom.png" id="1_cgrob"]
+[ext_resource type="Texture2D" uid="uid://c61u2d00asux1" path="res://Scenes/particle.png" id="2_kkh86"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_wmlxg"]
+blend_mode = 1
+
+[sub_resource type="Gradient" id="Gradient_1jn28"]
+offsets = PackedFloat32Array(0, 0.205387, 0.767677, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_fjfwn"]
+gradient = SubResource("Gradient_1jn28")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_o3gfk"]
+particle_flag_disable_z = true
+emission_shape_scale = Vector3(500, 300, 1)
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+direction = Vector3(-0.05, 0, 0)
+spread = 5.0
+initial_velocity_max = 15.0
+gravity = Vector3(0, 10, 0)
+scale_min = 0.0
+color = Color(1, 0.870833, 0.69, 1)
+color_ramp = SubResource("GradientTexture1D_fjfwn")
+hue_variation_min = -2.23517e-08
+hue_variation_max = 0.02
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_yrcji"]
+polygon = PackedVector2Array(144, -105, 233, -107, 236, -137, 265, -136, 262, -100, 242, -96, 140, -96, 111, -100, 112, -138, 141, -140)
+
+[node name="Scene1Bedroom" type="Sprite2D"]
+position = Vector2(959, 540)
+texture = ExtResource("1_cgrob")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+material = SubResource("CanvasItemMaterial_wmlxg")
+amount = 20
+process_material = SubResource("ParticleProcessMaterial_o3gfk")
+texture = ExtResource("2_kkh86")
+visibility_rect = Rect2(-600, -300, 1100, 600)
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+rotation = 1.21649
+scale = Vector2(1, 1)
+color = Color(0.706316, 0.828781, 0.923443, 1)
+energy = 0.1
+blend_mode = 2
+shadow_color = Color(0, 0, 0, 1)
+shadow_filter = 2
+shadow_filter_smooth = 5.0
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+modulate = Color(1, 1, 1, 0.619608)
+occluder = SubResource("OccluderPolygon2D_yrcji")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+position = Vector2(1, 0)
+color = Color(0.084405, 0.0731, 0.17, 1)
+
+[node name="Lamp Light" type="PointLight2D" parent="."]
+position = Vector2(183, -221)
+scale = Vector2(33.675, 29.725)
+color = Color(1, 0.700333, 0.38, 0.862745)
+energy = 1.42
+texture = ExtResource("2_kkh86")
+
+[node name="Glow 1" type="PointLight2D" parent="."]
+position = Vector2(184, -201)
+scale = Vector2(96.9806, 85.605)
+color = Color(1, 0.8115, 0.61, 0.862745)
+energy = 0.27
+texture = ExtResource("2_kkh86")
+
+[node name="Glow 2" type="PointLight2D" parent="."]
+position = Vector2(-709, -41)
+scale = Vector2(96.9806, 85.605)
+color = Color(1, 0.8115, 0.61, 0.862745)
+energy = 0.27
+texture = ExtResource("2_kkh86")
+
+[node name="Red Glows" type="Node" parent="."]
+
+[node name="PointLight2D2" type="PointLight2D" parent="Red Glows"]
+position = Vector2(1042, 393)
+scale = Vector2(34.4, 21.7813)
+color = Color(0.356863, 0.105882, 0.0509804, 0.643137)
+texture = ExtResource("2_kkh86")
+
+[node name="PointLight2D3" type="PointLight2D" parent="Red Glows"]
+position = Vector2(1246, 390)
+scale = Vector2(34.4, 21.7813)
+color = Color(0.356863, 0.105882, 0.0509804, 0.643137)
+texture = ExtResource("2_kkh86")
+
+[node name="PointLight2D4" type="PointLight2D" parent="Red Glows"]
+position = Vector2(359, 543)
+scale = Vector2(18.1734, 29)
+color = Color(0.36, 0.10716, 0.0504, 0.333333)
+texture = ExtResource("2_kkh86")
+
+[node name="PointLight2D5" type="PointLight2D" parent="Red Glows"]
+position = Vector2(1379, 780)
+scale = Vector2(18.1734, 20.3)
+color = Color(0.36, 0.10716, 0.0504, 0.188235)
+texture = ExtResource("2_kkh86")
+
+[node name="PointLight2D6" type="PointLight2D" parent="Red Glows"]
+position = Vector2(502, 789)
+scale = Vector2(18.1734, 20.3)
+color = Color(0.36, 0.10716, 0.0504, 0.176471)
+texture = ExtResource("2_kkh86")
+
+[node name="PointLight2D7" type="PointLight2D" parent="Red Glows"]
+position = Vector2(554, 398)
+scale = Vector2(18.1734, 20.3)
+color = Color(0.36, 0.10716, 0.0504, 0.133333)
+texture = ExtResource("2_kkh86")
