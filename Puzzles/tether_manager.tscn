@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bjoduwabj24gc"]
+
+[ext_resource type="Script" path="res://Puzzles/tether_manager.gd" id="1_my6gp"]
+
+[node name="Tether Manager" type="Node2D"]
+script = ExtResource("1_my6gp")
+
+[connection signal="tether_request" from="." to="." method="_on_tether_request"]

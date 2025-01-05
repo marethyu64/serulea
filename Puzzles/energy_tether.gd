@@ -1,31 +1,56 @@
-extends Area2D
+extends StaticBody2D
 
 const maxrange = 5000
 
-var shoot = false
+@export var shoot = false
+@export var tethered = false 
+@export var tether_count = 0
 
-@onready var collision: CollisionShape2D = $"../Line2D/Area2D/CollisionShape2D"
-@onready var reference: Sprite2D = $"../Reference"
-@onready var ray_cast_2d: RayCast2D = $"../RayCast2D"
-@onready var line_2d: Line2D = $"../Line2D"
+var mouse_inside = false
+var click_activated = false
+
+@onready var tether_manager = get_parent()
+
+@onready var collision: CollisionShape2D = $Line2D/Area2D/CollisionShape2D
+@onready var tether_detection: Area2D = $TetherDetection
+
+func _ready() -> void:
+	pass
 
 func _process(delta):
-	var mouse_position = get_local_mouse_position()
-	ray_cast_2d.target_position = mouse_position
-	if ray_cast_2d.is_colliding():
-		reference.global_position = ray_cast_2d.get_collision_point()
-		line_2d.set_point_position(1,line_2d.to_local(reference.global_position))
-	else:
-		reference.global_position = ray_cast_2d.target_position
-		line_2d.points[1] = reference.global_position
-	if shoot == true:
-		collision.shape.b = line_2d.points[1]
-		line_2d.visible = true
-	else:
-		collision.shape.b = Vector2.ZERO
-		collision.disabled = true
-		line_2d.visible = false
-
-func _on_mouse_entered() -> void:
-	if Input.is_action_pressed("Left Click"):
+	if Input.is_action_just_pressed("Left Click") and mouse_inside and tethered == false:
 		shoot = true
+	if Input.is_action_just_released("Left Click") and tethered == false:
+		if shoot: shoot = false	
+	handle_tether()
+
+func _on_mouse_entered() -> void: mouse_inside = true
+func _on_mouse_exited() -> void: mouse_inside = false
+
+func handle_tether():
+	if tethered == false:
+		if shoot == true:
+			collision.shape.b = $Line2D.points[1]
+			$Line2D.visible = true
+			$TetherLead.visible = true
+			var mouse_position = get_local_mouse_position()
+			$RayCast2D.target_position = mouse_position
+			if $RayCast2D.is_colliding():
+				$TetherLead.global_position = $RayCast2D.get_collision_point()
+				$Line2D.set_point_position(1,$Line2D.to_local($TetherLead.global_position))
+			else:
+				$TetherLead.global_position = $RayCast2D.to_global($RayCast2D.target_position)
+				$Line2D.points[1] = $Line2D.to_local($TetherLead.global_position)
+		else:
+			collision.shape.b = Vector2.ZERO
+			collision.disabled = true
+			$Line2D.visible = false
+			$TetherLead.visible = false
+			$Line2D.set_point_position(1,Vector2.ZERO)
+			$RayCast2D.target_position = Vector2.ZERO
+
+
+
+func _on_tether_lead_area_entered(area: Area2D) -> void:
+	if area.name == "TetherDetection" and area != tether_detection:
+		tether_manager.tether_request.emit()
