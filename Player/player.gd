@@ -9,14 +9,11 @@ var has_switched_to_calin = false
 @onready var lotus: CharacterBody2D = $Lotus
 @onready var calin: CharacterBody2D = $Calin
 
-var merge_distance = 100
+var merge_distance = 200
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	handle_follow_mode()
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("Perspective Change"):
 		if follow_mode:
@@ -28,8 +25,6 @@ func _process(delta: float) -> void:
 			match character_controlling:
 				"Lotus": handle_calin_control()
 				"Calin": handle_lotus_control()
-		
-	
 
 func handle_follow_mode():
 	print("Follow mode activated")

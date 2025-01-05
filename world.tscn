@@ -1,16 +1,32 @@
 [gd_scene load_steps=4 format=3 uid="uid://b8j44hd588xbs"]
 
 [ext_resource type="PackedScene" uid="uid://c4li0n6g1bb2r" path="res://Player/player.tscn" id="1_wqug5"]
+[ext_resource type="PackedScene" uid="uid://bjoduwabj24gc" path="res://Puzzles/tether_manager.tscn" id="2_0ud2x"]
 [ext_resource type="PackedScene" uid="uid://cqo0jlkvqo2qy" path="res://Puzzles/energy_tether.tscn" id="2_jl8gt"]
-[ext_resource type="PackedScene" uid="uid://8njumatelkbj" path="res://Puzzles/laser.tscn" id="3_xfhw2"]
 
 [node name="World" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_wqug5")]
 position = Vector2(509, 172)
 
-[node name="Energy Tether" parent="." instance=ExtResource("2_jl8gt")]
-position = Vector2(862, 305)
+[node name="Tether Manager" parent="." instance=ExtResource("2_0ud2x")]
 
-[node name="Laser" parent="." instance=ExtResource("3_xfhw2")]
-position = Vector2(244, 461)
+[node name="Energy Tether" parent="Tether Manager" instance=ExtResource("2_jl8gt")]
+position = Vector2(862, 305)
+scale = Vector2(1, 0.993908)
+
+[node name="Energy Tether2" parent="Tether Manager" instance=ExtResource("2_jl8gt")]
+position = Vector2(1334, 548)
+scale = Vector2(1, 0.993908)
+
+[node name="Energy Tether3" parent="Tether Manager" instance=ExtResource("2_jl8gt")]
+position = Vector2(1151, 804)
+scale = Vector2(1, 0.993908)
+
+[node name="Energy Tether4" parent="Tether Manager" instance=ExtResource("2_jl8gt")]
+position = Vector2(600, 848)
+scale = Vector2(1, 0.993908)
+
+[node name="Energy Tether5" parent="Tether Manager" instance=ExtResource("2_jl8gt")]
+position = Vector2(324, 660)
+scale = Vector2(1, 0.993908)
