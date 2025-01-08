@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://co1ktqgy4u5lt"]
+
+[ext_resource type="Script" path="res://coding stuff/scene_teleport.gd" id="1_677ob"]
+
+[node name="SceneTeleport" type="Area2D"]
+script = ExtResource("1_677ob")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

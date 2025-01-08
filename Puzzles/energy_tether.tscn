@@ -9,7 +9,7 @@ radius = 641.297
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hbvoh"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1aq8a"]
-radius = 131.746
+radius = 100.08
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_5ghvm"]
 b = Vector2(45, 0)

@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://bhlei2hxuk8ti"]
+[gd_scene load_steps=9 format=3 uid="uid://bhlei2hxuk8ti"]
 
-[ext_resource type="Texture2D" uid="uid://df2t61ngy6c3u" path="res://Scenes/scene1_livingroom.png" id="1_yikji"]
-[ext_resource type="Texture2D" uid="uid://c61u2d00asux1" path="res://Scenes/particle.png" id="2_a4fku"]
+[ext_resource type="Texture2D" uid="uid://df2t61ngy6c3u" path="res://Art Assets/scene1_livingroom.png" id="1_yikji"]
+[ext_resource type="Texture2D" uid="uid://c61u2d00asux1" path="res://Art Assets/particle.png" id="2_a4fku"]
+[ext_resource type="PackedScene" uid="uid://c4li0n6g1bb2r" path="res://Player/player.tscn" id="3_vuysh"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_srfco"]
 blend_mode = 1
@@ -95,3 +96,6 @@ position = Vector2(745, 820)
 scale = Vector2(46.1867, 16.75)
 color = Color(0.36, 0.10716, 0.0504, 0.333333)
 texture = ExtResource("2_a4fku")
+
+[node name="Player" parent="." instance=ExtResource("3_vuysh")]
+position = Vector2(397, 176)

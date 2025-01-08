@@ -2,9 +2,9 @@ extends StaticBody2D
 
 const maxrange = 5000
 
-@export var shoot = false
-@export var tethered = false 
-@export var tether_count = 0
+@export var shoot : bool = false
+@export var input : bool = false #Is the tether tethered by another tether?
+@export var output : bool = false #Is the tether outputting an energy tether?
 
 var mouse_inside = false
 var click_activated = false
@@ -14,13 +14,10 @@ var click_activated = false
 @onready var collision: CollisionShape2D = $Line2D/Area2D/CollisionShape2D
 @onready var tether_detection: Area2D = $TetherDetection
 
-func _ready() -> void:
-	pass
-
 func _process(delta):
-	if Input.is_action_just_pressed("Left Click") and mouse_inside and tethered == false:
+	if Input.is_action_just_pressed("Left Click") and mouse_inside and output == false:
 		shoot = true
-	if Input.is_action_just_released("Left Click") and tethered == false:
+	if Input.is_action_just_released("Left Click") and output == false:
 		if shoot: shoot = false	
 	handle_tether()
 
@@ -28,7 +25,7 @@ func _on_mouse_entered() -> void: mouse_inside = true
 func _on_mouse_exited() -> void: mouse_inside = false
 
 func handle_tether():
-	if tethered == false:
+	if output == false and not tether_manager.puzzle_completed:
 		if shoot == true:
 			collision.shape.b = $Line2D.points[1]
 			$Line2D.visible = true
@@ -53,4 +50,4 @@ func handle_tether():
 
 func _on_tether_lead_area_entered(area: Area2D) -> void:
 	if area.name == "TetherDetection" and area != tether_detection:
-		tether_manager.tether_request.emit()
+		tether_manager.tether_request.emit(self,area.get_parent())

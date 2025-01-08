@@ -2,7 +2,7 @@ extends Node2D
 
 @export var speed = 100
 
-var follow_mode = false
+@export var follow_mode = false
 var character_controlling = "Lotus"
 var has_switched_to_calin = false
 

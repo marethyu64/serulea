@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://v5mvyp60paw4"]
 
 [ext_resource type="Texture2D" uid="uid://cacdir4vupylu" path="res://Scenes/scene1_hallway.png" id="1_klfgh"]
-[ext_resource type="Texture2D" uid="uid://c61u2d00asux1" path="res://Scenes/particle.png" id="2_6y8qk"]
+[ext_resource type="Texture2D" uid="uid://c61u2d00asux1" path="res://Art Assets/particle.png" id="2_6y8qk"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_nds1g"]
 blend_mode = 1

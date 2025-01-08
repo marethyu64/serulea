@@ -32,6 +32,7 @@ hue_variation_max = 0.02
 polygon = PackedVector2Array(144, -105, 233, -107, 236, -137, 265, -136, 262, -100, 242, -96, 140, -96, 111, -100, 112, -138, 141, -140)
 
 [node name="Scene1Bedroom" type="Sprite2D"]
+z_index = -1
 position = Vector2(959, 540)
 texture = ExtResource("1_cgrob")
 
@@ -44,7 +45,6 @@ visibility_rect = Rect2(-600, -300, 1100, 600)
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
 rotation = 1.21649
-scale = Vector2(1, 1)
 color = Color(0.706316, 0.828781, 0.923443, 1)
 energy = 0.1
 blend_mode = 2
