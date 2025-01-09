@@ -1,8 +1,10 @@
 [gd_scene load_steps=9 format=3 uid="uid://bhlei2hxuk8ti"]
 
-[ext_resource type="Texture2D" uid="uid://df2t61ngy6c3u" path="res://Art Assets/scene1_livingroom.png" id="1_yikji"]
-[ext_resource type="Texture2D" uid="uid://c61u2d00asux1" path="res://Art Assets/particle.png" id="2_a4fku"]
+[ext_resource type="Texture2D" uid="uid://c61u2d00asux1" path="res://Scenes/circular_particle.png" id="2_a4fku"]
 [ext_resource type="PackedScene" uid="uid://c4li0n6g1bb2r" path="res://Player/player.tscn" id="3_vuysh"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_y6rld"]
+load_path = "res://.godot/imported/scene1_livingroom.png-24b685387242d9e8c348d3643a953e73.ctex"
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_srfco"]
 blend_mode = 1
@@ -29,12 +31,25 @@ color_ramp = SubResource("GradientTexture1D_up47h")
 hue_variation_min = -2.23517e-08
 hue_variation_max = 0.02
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_sj6hc"]
-polygon = PackedVector2Array(503, -179, 509, -94, 512, -43, 125, -31, 128, -191, 513, -188, 491, -400, -549, -434, -672, -302, -672, 377, 722, 372, 725, -397, 461, -394)
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_rf31s"]
+particle_flag_disable_z = true
+emission_shape_offset = Vector3(70, 100, 0)
+emission_shape = 3
+emission_box_extents = Vector3(70, 50, 1)
+spread = 5.0
+initial_velocity_min = -20.0
+initial_velocity_max = 20.0
+orbit_velocity_min = 9.49949e-08
+orbit_velocity_max = 9.49949e-08
+gravity = Vector3(0, -98, 0)
+scale_min = 0.1
+color = Color(1, 0.67, 0.67, 1)
+hue_variation_min = 0.03
+hue_variation_max = 0.23
 
 [node name="Scene1Livingroom" type="Sprite2D"]
 position = Vector2(960, 540)
-texture = ExtResource("1_yikji")
+texture = SubResource("CompressedTexture2D_y6rld")
 metadata/_edit_horizontal_guides_ = [49.0]
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
@@ -47,17 +62,53 @@ texture = ExtResource("2_a4fku")
 visibility_rect = Rect2(-600, -300, 1100, 600)
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
-visible = false
 rotation = 1.21649
-energy = 1.59
+color = Color(0.706316, 0.828781, 0.923443, 1)
+energy = 0.1
 blend_mode = 2
-
-[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
-visible = false
-occluder = SubResource("OccluderPolygon2D_sj6hc")
+shadow_color = Color(0, 0, 0, 1)
+shadow_filter = 2
+shadow_filter_smooth = 5.0
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color(0.567808, 0.551367, 0.60592, 1)
+color = Color(0.0862745, 0.0745098, 0.168627, 1)
+
+[node name="Fire Particles" type="GPUParticles2D" parent="."]
+material = SubResource("CanvasItemMaterial_srfco")
+position = Vector2(-184, -302)
+scale = Vector2(1.2, 0.68)
+amount = 50
+process_material = SubResource("ParticleProcessMaterial_rf31s")
+texture = ExtResource("2_a4fku")
+visibility_rect = Rect2(0, 0, 140, 230)
+
+[node name="Fire Light" type="PointLight2D" parent="."]
+position = Vector2(-104, -218)
+scale = Vector2(33.675, 29.725)
+color = Color(1, 0.700333, 0.38, 0.862745)
+energy = 1.42
+texture = ExtResource("2_a4fku")
+
+[node name="Glow 1" type="PointLight2D" parent="."]
+position = Vector2(-104, -203)
+scale = Vector2(108.808, 96.045)
+color = Color(1, 0.8115, 0.61, 0.862745)
+energy = 0.27
+texture = ExtResource("2_a4fku")
+
+[node name="Glow 2" type="PointLight2D" parent="."]
+position = Vector2(613, 231)
+scale = Vector2(80.7244, 71.2557)
+color = Color(1, 0.8115, 0.61, 0.862745)
+energy = 0.27
+texture = ExtResource("2_a4fku")
+
+[node name="Glow 3" type="PointLight2D" parent="."]
+position = Vector2(-654, 180)
+scale = Vector2(66.9806, 66.3974)
+color = Color(1, 0.8115, 0.61, 0.862745)
+energy = 0.27
+texture = ExtResource("2_a4fku")
 
 [node name="Red Glows" type="Node" parent="."]
 

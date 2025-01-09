@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://b4vorqcti8jml"]
+
+[ext_resource type="Texture2D" uid="uid://b8m8e8kgdguk8" path="res://Scenes/scene1_kitchen.png" id="1_83mit"]
+
+[node name="Scene1Kitchen" type="Sprite2D"]
+position = Vector2(960, 540)
+texture = ExtResource("1_83mit")
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+rotation = 1.21649
+scale = Vector2(1, 1)
+color = Color(0.706316, 0.828781, 0.923443, 1)
+energy = 0.1
+blend_mode = 2
+shadow_color = Color(0, 0, 0, 1)
+shadow_filter = 2
+shadow_filter_smooth = 5.0
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.0862745, 0.0745098, 0.168627, 1)

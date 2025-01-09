@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cacdir4vupylu"
-path="res://.godot/imported/scene1_hallway.png-775bdf12aacb5c3acb0d54a7a37c2004.ctex"
+uid="uid://c61u2d00asux1"
+path="res://.godot/imported/circular_particle.png-681dd96de0f235356483992d46932086.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art Assets/scene1_hallway.png"
-dest_files=["res://.godot/imported/scene1_hallway.png-775bdf12aacb5c3acb0d54a7a37c2004.ctex"]
+source_file="res://Scenes/circular_particle.png"
+dest_files=["res://.godot/imported/circular_particle.png-681dd96de0f235356483992d46932086.ctex"]
 
 [params]
 

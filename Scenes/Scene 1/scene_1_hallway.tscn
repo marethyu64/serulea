@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://v5mvyp60paw4"]
 
 [ext_resource type="Texture2D" uid="uid://cacdir4vupylu" path="res://Scenes/scene1_hallway.png" id="1_klfgh"]
-[ext_resource type="Texture2D" uid="uid://c61u2d00asux1" path="res://Art Assets/particle.png" id="2_6y8qk"]
+[ext_resource type="Texture2D" uid="uid://c61u2d00asux1" path="res://Scenes/circular_particle.png" id="2_6y8qk"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_nds1g"]
 blend_mode = 1
@@ -29,10 +29,10 @@ hue_variation_min = -2.23517e-08
 hue_variation_max = 0.02
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_o731o"]
-polygon = PackedVector2Array(722, 223, -135, 253, -157, -165, -226, -165, -224, -86, -153, -88, -151, -59, -226, -58, -255, 241, -700, 249, -703, -281, 725, -275)
+polygon = PackedVector2Array(-224, -186, -269, 322, -712, 250, -712, -329, 673, -349, 787, 255, -85, 318, -157, -187)
 
 [node name="Scene1Hallway" type="Sprite2D"]
-position = Vector2(960, 540)
+position = Vector2(961, 544)
 texture = ExtResource("1_klfgh")
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
@@ -45,13 +45,14 @@ texture = ExtResource("2_6y8qk")
 visibility_rect = Rect2(-600, -300, 1100, 600)
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
-rotation = 1.21649
-color = Color(0.819507, 0.894381, 0.953086, 1)
+rotation = 3.14159
+color = Color(0.272508, 0.2491, 0.53, 1)
 energy = 0.4
 blend_mode = 2
+shadow_enabled = true
 shadow_color = Color(0, 0, 0, 1)
 shadow_filter = 2
-shadow_filter_smooth = 5.0
+shadow_filter_smooth = 2.5
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
 modulate = Color(1, 1, 1, 0.619608)
@@ -59,7 +60,21 @@ position = Vector2(-3, -1)
 occluder = SubResource("OccluderPolygon2D_o731o")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color(0.0862745, 0.0745098, 0.168627, 1)
+color = Color(0.258123, 0.233397, 0.436329, 1)
+
+[node name="Glow 1" type="PointLight2D" parent="."]
+position = Vector2(-189, -79)
+scale = Vector2(15.4313, -33.8415)
+color = Color(1, 0.8115, 0.61, 0.862745)
+energy = 0.27
+texture = ExtResource("2_6y8qk")
+
+[node name="Glow 2" type="PointLight2D" parent="."]
+position = Vector2(690, 49)
+scale = Vector2(96.9806, 85.605)
+color = Color(1, 0.8115, 0.61, 0.862745)
+energy = 0.27
+texture = ExtResource("2_6y8qk")
 
 [node name="Red Glows" type="Node" parent="."]
 
