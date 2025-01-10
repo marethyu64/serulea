@@ -13,7 +13,7 @@ blend_mode = 1
 offsets = PackedFloat32Array(0, 0.205387, 0.767677, 1)
 colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_up47h"]
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_2tpf3"]
 gradient = SubResource("Gradient_6fxlq")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_kmoaq"]
@@ -27,7 +27,7 @@ initial_velocity_max = 15.0
 gravity = Vector3(0, 10, 0)
 scale_min = 0.0
 color = Color(1, 0.916667, 0.8, 1)
-color_ramp = SubResource("GradientTexture1D_up47h")
+color_ramp = SubResource("GradientTexture1D_2tpf3")
 hue_variation_min = -2.23517e-08
 hue_variation_max = 0.02
 
@@ -115,13 +115,13 @@ texture = ExtResource("2_a4fku")
 [node name="PointLight2D2" type="PointLight2D" parent="Red Glows"]
 position = Vector2(1608, 775)
 scale = Vector2(34.4, 21.7813)
-color = Color(0.360784, 0.105882, 0.0509804, 0.333333)
+color = Color(0.360784, 0.105882, 0.0509804, 0.176471)
 texture = ExtResource("2_a4fku")
 
 [node name="PointLight2D3" type="PointLight2D" parent="Red Glows"]
 position = Vector2(352, 700)
 scale = Vector2(34.4, 21.7813)
-color = Color(0.360784, 0.105882, 0.0509804, 0.333333)
+color = Color(0.360784, 0.105882, 0.0509804, 0.176471)
 texture = ExtResource("2_a4fku")
 
 [node name="PointLight2D4" type="PointLight2D" parent="Red Glows"]
@@ -133,7 +133,7 @@ texture = ExtResource("2_a4fku")
 [node name="PointLight2D5" type="PointLight2D" parent="Red Glows"]
 position = Vector2(552, 320)
 scale = Vector2(34.4, 21.7813)
-color = Color(0.360784, 0.105882, 0.0509804, 0.333333)
+color = Color(0.360784, 0.105882, 0.0509804, 0.176471)
 texture = ExtResource("2_a4fku")
 
 [node name="PointLight2D6" type="PointLight2D" parent="Red Glows"]
@@ -145,7 +145,7 @@ texture = ExtResource("2_a4fku")
 [node name="PointLight2D7" type="PointLight2D" parent="Red Glows"]
 position = Vector2(745, 820)
 scale = Vector2(46.1867, 16.75)
-color = Color(0.36, 0.10716, 0.0504, 0.333333)
+color = Color(0.360784, 0.105882, 0.0509804, 0.176471)
 texture = ExtResource("2_a4fku")
 
 [node name="Player" parent="." instance=ExtResource("3_vuysh")]

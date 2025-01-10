@@ -10,7 +10,7 @@ blend_mode = 1
 offsets = PackedFloat32Array(0, 0.205387, 0.767677, 1)
 colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_fjfwn"]
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_38hkh"]
 gradient = SubResource("Gradient_1jn28")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_o3gfk"]
@@ -24,7 +24,7 @@ initial_velocity_max = 15.0
 gravity = Vector3(0, 10, 0)
 scale_min = 0.0
 color = Color(1, 0.870833, 0.69, 1)
-color_ramp = SubResource("GradientTexture1D_fjfwn")
+color_ramp = SubResource("GradientTexture1D_38hkh")
 hue_variation_min = -2.23517e-08
 hue_variation_max = 0.02
 
