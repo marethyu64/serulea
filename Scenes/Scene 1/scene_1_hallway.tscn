@@ -83,13 +83,13 @@ texture = ExtResource("2_6y8qk")
 [node name="PointLight2D2" type="PointLight2D" parent="Lighting/Red Glows"]
 position = Vector2(1484, 459)
 scale = Vector2(34.4, 21.7813)
-color = Color(0.360784, 0.105882, 0.0509804, 0.333333)
+color = Color(0.360784, 0.105882, 0.0509804, 0.176471)
 texture = ExtResource("2_6y8qk")
 
 [node name="PointLight2D3" type="PointLight2D" parent="Lighting/Red Glows"]
 position = Vector2(364, 565)
 scale = Vector2(34.4, 21.7813)
-color = Color(0.360784, 0.105882, 0.0509804, 0.333333)
+color = Color(0.360784, 0.105882, 0.0509804, 0.176471)
 texture = ExtResource("2_6y8qk")
 
 [node name="PointLight2D4" type="PointLight2D" parent="Lighting/Red Glows"]
@@ -101,13 +101,13 @@ texture = ExtResource("2_6y8qk")
 [node name="PointLight2D5" type="PointLight2D" parent="Lighting/Red Glows"]
 position = Vector2(491.5, 772)
 scale = Vector2(42.1, 21.7813)
-color = Color(0.360784, 0.105882, 0.0509804, 0.333333)
+color = Color(0.360784, 0.105882, 0.0509804, 0.176471)
 texture = ExtResource("2_6y8qk")
 
 [node name="PointLight2D6" type="PointLight2D" parent="Lighting/Red Glows"]
 position = Vector2(1653, 594)
 scale = Vector2(34.4, 21.7813)
-color = Color(0.360784, 0.105882, 0.0509804, 0.333333)
+color = Color(0.360784, 0.105882, 0.0509804, 0.176471)
 texture = ExtResource("2_6y8qk")
 
 [node name="SpawnPoints" type="Node2D" parent="."]
