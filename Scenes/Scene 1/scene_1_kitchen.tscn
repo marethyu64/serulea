@@ -8,7 +8,6 @@ texture = ExtResource("1_83mit")
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
 rotation = 1.21649
-scale = Vector2(1, 1)
 color = Color(0.706316, 0.828781, 0.923443, 1)
 energy = 0.1
 blend_mode = 2

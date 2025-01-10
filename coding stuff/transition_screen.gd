@@ -10,6 +10,7 @@ func _ready() -> void:
 
 
 func _on_animation_finished(anim_name):
+	print(anim_name.substr(6))
 	animation_player.play("exit_" + anim_name.substr(6))
 	on_transition_finished.emit()
 

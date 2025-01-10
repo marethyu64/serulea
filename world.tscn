@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bjoduwabj24gc" path="res://Puzzles/tether_manager.tscn" id="2_0ud2x"]
 [ext_resource type="PackedScene" uid="uid://cqo0jlkvqo2qy" path="res://Puzzles/energy_tether.tscn" id="2_jl8gt"]
 [ext_resource type="PackedScene" uid="uid://co1ktqgy4u5lt" path="res://coding stuff/scene_teleport.tscn" id="4_uha8q"]
-[ext_resource type="PackedScene" uid="uid://c8vf4yp1nro40" path="res://Scenes/Scene 1/scene_1_bedroom.tscn" id="5_70bib"]
+[ext_resource type="PackedScene" uid="uid://v5mvyp60paw4" path="res://Scenes/Scene 1/scene_1_hallway.tscn" id="5_40j70"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yf3vv"]
 
@@ -54,7 +54,7 @@ scale = Vector2(1, 0.993908)
 [node name="SceneTeleport" parent="." instance=ExtResource("4_uha8q")]
 position = Vector2(12, 108)
 enabled = true
-destination = ExtResource("5_70bib")
+scene = ExtResource("5_40j70")
 direction = "left"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SceneTeleport"]
