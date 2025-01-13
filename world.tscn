@@ -1,19 +1,17 @@
 [gd_scene load_steps=7 format=3 uid="uid://b8j44hd588xbs"]
 
-[ext_resource type="PackedScene" uid="uid://c4li0n6g1bb2r" path="res://Player/player.tscn" id="1_wqug5"]
 [ext_resource type="PackedScene" uid="uid://bjoduwabj24gc" path="res://Puzzles/tether_manager.tscn" id="2_0ud2x"]
 [ext_resource type="PackedScene" uid="uid://cqo0jlkvqo2qy" path="res://Puzzles/energy_tether.tscn" id="2_jl8gt"]
+[ext_resource type="PackedScene" uid="uid://uax31eldtsre" path="res://Puzzles/encrypted_object.tscn" id="4_c4ds8"]
 [ext_resource type="PackedScene" uid="uid://co1ktqgy4u5lt" path="res://coding stuff/scene_teleport.tscn" id="4_uha8q"]
-[ext_resource type="PackedScene" uid="uid://v5mvyp60paw4" path="res://Scenes/Scene 1/scene_1_hallway.tscn" id="5_40j70"]
+[ext_resource type="PackedScene" uid="uid://boe4qbcbucu3y" path="res://Puzzles/a_fucking_rock.tscn" id="5_juf0x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yf3vv"]
 
 [node name="World" type="Node2D"]
 
-[node name="Player" parent="." instance=ExtResource("1_wqug5")]
-position = Vector2(509, 172)
-
 [node name="Tether Manager" parent="." instance=ExtResource("2_0ud2x")]
+position = Vector2(176, -25)
 
 [node name="Energy Tether" parent="Tether Manager" instance=ExtResource("2_jl8gt")]
 position = Vector2(862, 305)
@@ -52,12 +50,35 @@ position = Vector2(1003, 573)
 scale = Vector2(1, 0.993908)
 
 [node name="SceneTeleport" parent="." instance=ExtResource("4_uha8q")]
-position = Vector2(12, 108)
+position = Vector2(26, 101)
 enabled = true
-scene = ExtResource("5_40j70")
 direction = "left"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SceneTeleport"]
 position = Vector2(1898, 483)
 scale = Vector2(1, 22.52)
 shape = SubResource("RectangleShape2D_yf3vv")
+
+[node name="EncryptedObject" parent="." instance=ExtResource("4_c4ds8")]
+position = Vector2(698, 128)
+
+[node name="EncryptedObject2" parent="." instance=ExtResource("4_c4ds8")]
+position = Vector2(1349, 413)
+
+[node name="EncryptedObject3" parent="." instance=ExtResource("4_c4ds8")]
+position = Vector2(584, 839)
+
+[node name="EncryptedObject4" parent="." instance=ExtResource("4_c4ds8")]
+position = Vector2(243, 624)
+
+[node name="AFuckingRock" parent="." instance=ExtResource("5_juf0x")]
+position = Vector2(467, 436)
+
+[node name="AFuckingRock2" parent="." instance=ExtResource("5_juf0x")]
+position = Vector2(667, 585)
+
+[node name="AFuckingRock3" parent="." instance=ExtResource("5_juf0x")]
+position = Vector2(1092, 816)
+
+[node name="AFuckingRock4" parent="." instance=ExtResource("5_juf0x")]
+position = Vector2(876, 384)

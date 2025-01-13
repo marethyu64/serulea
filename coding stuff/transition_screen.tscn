@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://by482tfbh0gfl"]
+[gd_scene load_steps=12 format=3 uid="uid://by482tfbh0gfl"]
 
 [ext_resource type="Script" path="res://coding stuff/transition_screen.gd" id="1_0mdrg"]
 
@@ -29,8 +29,62 @@ tracks/1/keys = {
 "values": [Vector2(0, 1080)]
 }
 
-[sub_resource type="Animation" id="Animation_4suw6"]
+[sub_resource type="Animation" id="Animation_kyoqq"]
+resource_name = "enter_down"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1920, 0), Vector2(1920, 1080)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 1080), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_12mib"]
 resource_name = "enter_left"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 1080), Vector2(1920, 1080)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_4suw6"]
+resource_name = "enter_right"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -83,8 +137,62 @@ tracks/1/keys = {
 "values": [Vector2(0, 0), Vector2(0, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_yi3nw"]
+[sub_resource type="Animation" id="Animation_bl0ql"]
+resource_name = "exit_down"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1920, 1080), Vector2(1920, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_5tb0q"]
 resource_name = "exit_left"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1920, 1080), Vector2(0, 1080)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1920, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_yi3nw"]
+resource_name = "exit_right"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -122,7 +230,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(1920, 0), Vector2(1920, 1080)]
+"values": [Vector2(1920, 1080), Vector2(1920, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -134,15 +242,19 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0, 1080), Vector2(0, 0)]
+"values": [Vector2(0, 0), Vector2(0, 1080)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_b7m8m"]
 _data = {
 "RESET": SubResource("Animation_wnlnu"),
-"enter_left": SubResource("Animation_4suw6"),
+"enter_down": SubResource("Animation_kyoqq"),
+"enter_left": SubResource("Animation_12mib"),
+"enter_right": SubResource("Animation_4suw6"),
 "enter_up": SubResource("Animation_d1rbk"),
-"exit_left": SubResource("Animation_yi3nw"),
+"exit_down": SubResource("Animation_bl0ql"),
+"exit_left": SubResource("Animation_5tb0q"),
+"exit_right": SubResource("Animation_yi3nw"),
 "exit_up": SubResource("Animation_divmf")
 }
 
@@ -150,11 +262,12 @@ _data = {
 script = ExtResource("1_0mdrg")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-anchors_preset = 9
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 1080.0
-offset_right = 1920.0
-grow_vertical = 2
+grow_horizontal = 2
+grow_vertical = 0
 color = Color(0, 0, 0, 1)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

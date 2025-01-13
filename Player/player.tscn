@@ -48,7 +48,7 @@ height = 152.0
 script = ExtResource("1_4d0kg")
 
 [node name="Lotus" type="CharacterBody2D" parent="."]
-z_index = 1
+z_index = 2
 collision_mask = 4
 script = ExtResource("2_sjvvq")
 
@@ -59,6 +59,7 @@ sprite_frames = SubResource("SpriteFrames_pbbwo")
 shape = SubResource("CapsuleShape2D_ipfjm")
 
 [node name="Calin" type="CharacterBody2D" parent="."]
+z_index = 1
 collision_mask = 4
 script = ExtResource("4_7nmco")
 

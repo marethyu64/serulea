@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://b4vorqcti8jml"]
+[gd_scene load_steps=9 format=3 uid="uid://b4vorqcti8jml"]
 
 [ext_resource type="Texture2D" uid="uid://b8m8e8kgdguk8" path="res://Scenes/scene1_kitchen.png" id="1_83mit"]
 [ext_resource type="Texture2D" uid="uid://c61u2d00asux1" path="res://Scenes/circular_particle.png" id="2_up0o1"]
+[ext_resource type="PackedScene" uid="uid://co1ktqgy4u5lt" path="res://coding stuff/scene_teleport.tscn" id="3_qmeln"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_x3i06"]
 blend_mode = 1
@@ -28,18 +29,25 @@ color_ramp = SubResource("GradientTexture1D_fjfwn")
 hue_variation_min = -2.23517e-08
 hue_variation_max = 0.02
 
-[node name="Scene1Kitchen" type="Sprite2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fqjt4"]
+size = Vector2(20, 172)
+
+[node name="Scene1Kitchen" type="Node2D"]
 position = Vector2(960, 540)
+
+[node name="Background" type="Sprite2D" parent="."]
 texture = ExtResource("1_83mit")
 
-[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+[node name="Lighting" type="Node2D" parent="Background"]
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="Background/Lighting"]
 material = SubResource("CanvasItemMaterial_x3i06")
 amount = 20
 process_material = SubResource("ParticleProcessMaterial_4nwx8")
 texture = ExtResource("2_up0o1")
 visibility_rect = Rect2(-600, -300, 1100, 600)
 
-[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="Background/Lighting"]
 rotation = 1.21649
 color = Color(0.706316, 0.828781, 0.923443, 1)
 energy = 0.1
@@ -48,48 +56,63 @@ shadow_color = Color(0, 0, 0, 1)
 shadow_filter = 2
 shadow_filter_smooth = 5.0
 
-[node name="CanvasModulate" type="CanvasModulate" parent="."]
+[node name="CanvasModulate" type="CanvasModulate" parent="Background/Lighting"]
 color = Color(0.0862745, 0.0745098, 0.168627, 1)
 
-[node name="Glow 1" type="PointLight2D" parent="."]
+[node name="Glow 1" type="PointLight2D" parent="Background/Lighting"]
 position = Vector2(-105, -115)
 scale = Vector2(68.848, 60.7722)
 color = Color(1, 0.8115, 0.61, 0.862745)
 energy = 0.2
 texture = ExtResource("2_up0o1")
 
-[node name="Glow 2" type="PointLight2D" parent="."]
+[node name="Glow 2" type="PointLight2D" parent="Background/Lighting"]
 position = Vector2(427, 256)
 scale = Vector2(68.848, 60.7722)
 color = Color(1, 0.8115, 0.61, 0.862745)
 energy = 0.15
 texture = ExtResource("2_up0o1")
 
-[node name="Red Glows" type="Node" parent="."]
+[node name="Red Glows" type="Node" parent="Background/Lighting"]
 
-[node name="PointLight2D" type="PointLight2D" parent="Red Glows"]
+[node name="PointLight2D" type="PointLight2D" parent="Background/Lighting/Red Glows"]
 position = Vector2(853, 449)
 scale = Vector2(34.4, 21.7813)
 color = Color(0.360784, 0.105882, 0.0509804, 0.333333)
 texture = ExtResource("2_up0o1")
 
-[node name="PointLight2D2" type="PointLight2D" parent="Red Glows"]
+[node name="PointLight2D2" type="PointLight2D" parent="Background/Lighting/Red Glows"]
 position = Vector2(599, 649)
 rotation = -1.57079
 scale = Vector2(34.4, 21.7813)
 color = Color(0.360784, 0.105882, 0.0509804, 0.333333)
 texture = ExtResource("2_up0o1")
 
-[node name="PointLight2D3" type="PointLight2D" parent="Red Glows"]
+[node name="PointLight2D3" type="PointLight2D" parent="Background/Lighting/Red Glows"]
 position = Vector2(1328, 715)
 rotation = -1.57079
 scale = Vector2(34.4, 21.7813)
 color = Color(0.360784, 0.105882, 0.0509804, 0.176471)
 texture = ExtResource("2_up0o1")
 
-[node name="PointLight2D4" type="PointLight2D" parent="Red Glows"]
+[node name="PointLight2D4" type="PointLight2D" parent="Background/Lighting/Red Glows"]
 position = Vector2(1159, 483)
 rotation = 1.5708
 scale = Vector2(41.2824, -35.8581)
 color = Color(0.360784, 0.105882, 0.0509804, 0.176471)
 texture = ExtResource("2_up0o1")
+
+[node name="ToLivingRoom" parent="." instance=ExtResource("3_qmeln")]
+enabled = true
+scene_file = "res://Scenes/Scene 1/scene_1_livingroom.tscn"
+direction = "right"
+spawn_location = "FromKitchen"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ToLivingRoom"]
+position = Vector2(379, 191)
+shape = SubResource("RectangleShape2D_fqjt4")
+
+[node name="SpawnPoints" type="Node2D" parent="."]
+
+[node name="FromLivingRoom" type="Marker2D" parent="SpawnPoints"]
+position = Vector2(267, 208)
