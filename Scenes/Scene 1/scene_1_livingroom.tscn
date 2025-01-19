@@ -1,7 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://bhlei2hxuk8ti"]
+[gd_scene load_steps=13 format=3 uid="uid://bhlei2hxuk8ti"]
 
-[ext_resource type="Texture2D" uid="uid://d4f3xr14jpqp3" path="res://Scenes/scene1_livingroom.png" id="1_t5x1l"]
-[ext_resource type="Texture2D" uid="uid://c61u2d00asux1" path="res://Scenes/circular_particle.png" id="2_a4fku"]
+[ext_resource type="Texture2D" uid="uid://d4f3xr14jpqp3" path="res://Art Assets/scene1_livingroom.png" id="1_t5x1l"]
+[ext_resource type="Texture2D" uid="uid://c61u2d00asux1" path="res://Art Assets/circular_particle.png" id="2_a4fku"]
 [ext_resource type="PackedScene" uid="uid://co1ktqgy4u5lt" path="res://coding stuff/scene_teleport.tscn" id="3_jljq7"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_srfco"]
@@ -50,6 +50,13 @@ size = Vector2(178, 47)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rl2kb"]
 size = Vector2(71, 104)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_f05gc"]
+radius = 18.9131
+height = 142.451
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_elvk1"]
+size = Vector2(486.5, 193)
 
 [node name="Scene1Livingroom" type="Node2D"]
 position = Vector2(960, 540)
@@ -183,3 +190,17 @@ spawn_location = "FromLivingRoom"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ToKitchen"]
 position = Vector2(-625.5, 199)
 shape = SubResource("RectangleShape2D_rl2kb")
+
+[node name="Collisions" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Collisions"]
+polygon = PackedVector2Array(-243, -278, 45, -279, 44, -304, 615, -304, 614, 83, 668, 83, 668, 338, -15, 327, -16, 276, -41, 267, -104, 283, -142, 250, -276, 257, -326, 231, -352, 259, -450, 262, -460, 240, -503, 239, -520, 281, -548, 244, -613, 246, -613, 38, -565, 36, -571, -297, -501, -359, -398, -362, -398, -451, -762, -447, -755, 452, 800, 461, 801, -457, -397, -452, -396, -363, -290, -363, -291, -296, -245, -296)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions"]
+position = Vector2(-518, -240)
+rotation = -0.0565439
+shape = SubResource("CapsuleShape2D_f05gc")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Collisions"]
+position = Vector2(353.75, -93.5)
+shape = SubResource("RectangleShape2D_elvk1")

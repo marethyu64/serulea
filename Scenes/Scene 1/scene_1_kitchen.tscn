@@ -1,7 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://b4vorqcti8jml"]
+[gd_scene load_steps=10 format=3 uid="uid://b4vorqcti8jml"]
 
-[ext_resource type="Texture2D" uid="uid://b8m8e8kgdguk8" path="res://Scenes/scene1_kitchen.png" id="1_83mit"]
-[ext_resource type="Texture2D" uid="uid://c61u2d00asux1" path="res://Scenes/circular_particle.png" id="2_up0o1"]
+[ext_resource type="Texture2D" uid="uid://b8m8e8kgdguk8" path="res://Art Assets/scene1_kitchen.png" id="1_83mit"]
+[ext_resource type="Texture2D" uid="uid://c61u2d00asux1" path="res://Art Assets/circular_particle.png" id="2_up0o1"]
 [ext_resource type="PackedScene" uid="uid://co1ktqgy4u5lt" path="res://coding stuff/scene_teleport.tscn" id="3_qmeln"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_x3i06"]
@@ -31,6 +31,10 @@ hue_variation_max = 0.02
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fqjt4"]
 size = Vector2(20, 172)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_l28xo"]
+radius = 14.9655
+height = 48.0376
 
 [node name="Scene1Kitchen" type="Node2D"]
 position = Vector2(960, 540)
@@ -116,3 +120,13 @@ shape = SubResource("RectangleShape2D_fqjt4")
 
 [node name="FromLivingRoom" type="Marker2D" parent="SpawnPoints"]
 position = Vector2(267, 208)
+
+[node name="Collisions" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Collisions"]
+polygon = PackedVector2Array(-315, -132, 213, -131, 214, -114, 350, -114, 353, 52, 383, 55, 387, 277, 68, 277, 13, 241, -26, 279, -119, 276, -154, 229, -197, 264, -201, 284, -314, 284, -314, -40, -732, -26, -732, 418, 503, 401, 438, -411, -731, -428, -731, -55, -316, -46)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions"]
+position = Vector2(175, -4)
+rotation = 1.54231
+shape = SubResource("CapsuleShape2D_l28xo")

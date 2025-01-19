@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d4f3xr14jpqp3"
-path="res://.godot/imported/scene1_livingroom.png-24b685387242d9e8c348d3643a953e73.ctex"
+uid="uid://uj5c2vd1hwlk"
+path="res://.godot/imported/square_particle.PNG-fd5c9c0d6e75edb92b6c39fb4256b50b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/scene1_livingroom.png"
-dest_files=["res://.godot/imported/scene1_livingroom.png-24b685387242d9e8c348d3643a953e73.ctex"]
+source_file="res://Art Assets/square_particle.PNG"
+dest_files=["res://.godot/imported/square_particle.PNG-fd5c9c0d6e75edb92b6c39fb4256b50b.ctex"]
 
 [params]
 

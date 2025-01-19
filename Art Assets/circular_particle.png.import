@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://3wxchct4us62"
-path="res://.godot/imported/scene1_bedroom.png-5bfe179d8777f8977f10199a72d6077f.ctex"
+uid="uid://c61u2d00asux1"
+path="res://.godot/imported/circular_particle.png-1f04fdef38e6472c1bd8c255859b5745.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/scene1_bedroom.png"
-dest_files=["res://.godot/imported/scene1_bedroom.png-5bfe179d8777f8977f10199a72d6077f.ctex"]
+source_file="res://Art Assets/circular_particle.png"
+dest_files=["res://.godot/imported/circular_particle.png-1f04fdef38e6472c1bd8c255859b5745.ctex"]
 
 [params]
 
