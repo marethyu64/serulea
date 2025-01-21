@@ -8,6 +8,8 @@ signal puzzle_completion
 const TETHER = preload("res://Puzzles/tether.tscn")
 const MOUSE_DISTANCE_TO_TETHER = 60
 
+var can_tether : bool = true
+
 var tethers : int = 0
 var group_ticket : int = 0
 var dragging_tether : bool = false
@@ -22,7 +24,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("Left Click"):
+	if Input.is_action_just_pressed("Left Click") and can_tether == true:
 		for tether in get_children():
 			if get_global_mouse_position().distance_to(tether.global_position) < MOUSE_DISTANCE_TO_TETHER:
 				select_tether(tether)
@@ -81,8 +83,9 @@ func link_tether(tether1,tether2):
 			if tether2.group == 0: 
 				tether2.group = tether1.group
 			else:
+				var group_to_remove = tether2.group
 				for tether in get_children():
-					if tether.group == tether2.group: 
+					if tether.group == group_to_remove: 
 						tether.group = tether1.group
 		
 		new_tether.get_node("Line2D").set_point_position(1, new_tether.to_local(tether2.global_position))
@@ -95,14 +98,20 @@ func link_tether(tether1,tether2):
 			print("finish!!!!")
 
 func check_completion():
-	var prev_group = 0
+	var prev_group = get_child(0).group
 	for tether in get_children():
-		if tether.group == 0: return false
-		if prev_group == 0 and tether.group != 0: tether.group = prev_group
-		if tether.group != prev_group: return false
+		if tether.group == 0 or tether.group != prev_group:
+			return false
 	return true
 			
 
 func character_swapped(swapped_character):
 	if swapped_character == "calin":
-		pass
+		can_tether = false
+		if dragging_tether:
+			dragging_tether = false
+			new_tether.queue_free()
+			new_tether = null
+			current_energy_tether = null
+	else: 
+		can_tether = true

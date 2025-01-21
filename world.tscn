@@ -11,7 +11,7 @@
 position = Vector2(176, -25)
 
 [node name="Energy Tether" parent="Tether Manager" instance=ExtResource("2_jl8gt")]
-position = Vector2(862, 305)
+position = Vector2(893, 301)
 scale = Vector2(1, 0.993908)
 
 [node name="Energy Tether2" parent="Tether Manager" instance=ExtResource("2_jl8gt")]
