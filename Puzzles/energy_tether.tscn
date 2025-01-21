@@ -1,18 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://cqo0jlkvqo2qy"]
+[gd_scene load_steps=5 format=3 uid="uid://cqo0jlkvqo2qy"]
 
 [ext_resource type="Script" path="res://Puzzles/energy_tether.gd" id="1_jhqfl"]
 [ext_resource type="Texture2D" uid="uid://gjbllss8rlti" path="res://icon.svg" id="1_k70ql"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_w8fvw"]
-radius = 641.297
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hbvoh"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1aq8a"]
-radius = 100.08
-
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_5ghvm"]
-b = Vector2(45, 0)
+radius = 15.2643
 
 [node name="Energy Tether" type="StaticBody2D"]
 input_pickable = true
@@ -23,20 +17,8 @@ position = Vector2(3.8147e-06, 1.90735e-06)
 scale = Vector2(0.138988, 0.142959)
 texture = ExtResource("1_k70ql")
 
-[node name="TetherLead" type="Area2D" parent="."]
-position = Vector2(3.8147e-06, 1.90735e-06)
-scale = Vector2(0.138988, 0.142959)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TetherLead"]
-shape = SubResource("CircleShape2D_w8fvw")
-
-[node name="Sprite2D" type="Sprite2D" parent="TetherLead"]
-position = Vector2(3.8147e-06, 1.90735e-06)
-scale = Vector2(0.986794, 1.01499)
-texture = ExtResource("1_k70ql")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2(6.68, 6.68)
+scale = Vector2(2.04, 2.04)
 shape = SubResource("RectangleShape2D_hbvoh")
 
 [node name="TetherDetection" type="Area2D" parent="."]
@@ -45,18 +27,10 @@ input_pickable = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TetherDetection"]
 shape = SubResource("CircleShape2D_1aq8a")
 
-[node name="RayCast2D" type="RayCast2D" parent="."]
-target_position = Vector2(51, 0)
-
-[node name="Line2D" type="Line2D" parent="."]
-points = PackedVector2Array(0, 0, 45, 0)
-default_color = Color(0.345098, 0.509804, 1, 1)
-
-[node name="Area2D" type="Area2D" parent="Line2D"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Line2D/Area2D"]
-shape = SubResource("SegmentShape2D_5ghvm")
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+scale = Vector2(6.44, 6.44)
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
-[connection signal="area_entered" from="TetherLead" to="." method="_on_tether_lead_area_entered"]

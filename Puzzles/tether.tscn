@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://dprs8fenmas5g"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_jhvxp"]
+b = Vector2(45, 0)
+
+[node name="Tether" type="Node2D"]
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(51, 0)
+
+[node name="Line2D" type="Line2D" parent="."]
+points = PackedVector2Array(0, 0, 0, 0)
+default_color = Color(0.332218, 0.511086, 1, 1)
+
+[node name="Area2D" type="Area2D" parent="Line2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Line2D/Area2D"]
+shape = SubResource("SegmentShape2D_jhvxp")
