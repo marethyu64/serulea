@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://d4f3xr14jpqp3" path="res://Art Assets/scene1_livingroom.png" id="1_t5x1l"]
 [ext_resource type="Texture2D" uid="uid://c61u2d00asux1" path="res://Art Assets/circular_particle.png" id="2_a4fku"]
 [ext_resource type="PackedScene" uid="uid://co1ktqgy4u5lt" path="res://coding stuff/scene_teleport.tscn" id="3_jljq7"]
+[ext_resource type="PackedScene" uid="uid://c4li0n6g1bb2r" path="res://Player/player.tscn" id="4_muw6p"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_srfco"]
 blend_mode = 1
@@ -51,12 +52,9 @@ size = Vector2(178, 47)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rl2kb"]
 size = Vector2(71, 104)
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_f05gc"]
-radius = 18.9131
-height = 142.451
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_elvk1"]
-size = Vector2(486.5, 193)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nk4eu"]
+radius = 78.25
+height = 477.5
 
 [node name="Scene1Livingroom" type="Node2D"]
 position = Vector2(960, 540)
@@ -192,15 +190,15 @@ position = Vector2(-625.5, 199)
 shape = SubResource("RectangleShape2D_rl2kb")
 
 [node name="Collisions" type="StaticBody2D" parent="."]
+collision_layer = 4
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Collisions"]
-polygon = PackedVector2Array(-243, -278, 45, -279, 44, -304, 615, -304, 614, 83, 668, 83, 668, 338, -15, 327, -16, 276, -41, 267, -104, 283, -142, 250, -276, 257, -326, 231, -352, 259, -450, 262, -460, 240, -503, 239, -520, 281, -548, 244, -613, 246, -613, 38, -565, 36, -571, -297, -501, -359, -398, -362, -398, -451, -762, -447, -755, 452, 800, 461, 801, -457, -397, -452, -396, -363, -290, -363, -291, -296, -245, -296)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions"]
-position = Vector2(-518, -240)
-rotation = -0.0565439
-shape = SubResource("CapsuleShape2D_f05gc")
+polygon = PackedVector2Array(-243, -278, 41, -278, 66, -304, 615, -304, 614, 83, 668, 83, 665, 332, 2, 324, -15, 272, -42, 263, -548, 244, -613, 246, -612, 21, -566, 22, -565, -237, -520, -281, -499, -339, -403, -339, -398, -451, -762, -447, -755, 452, 800, 461, 801, -457, -397, -452, -396, -339, -292, -339)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Collisions"]
 position = Vector2(353.75, -93.5)
-shape = SubResource("RectangleShape2D_elvk1")
+rotation = 1.5712
+shape = SubResource("CapsuleShape2D_nk4eu")
+
+[node name="Player" parent="Collisions" instance=ExtResource("4_muw6p")]
+position = Vector2(-118, 58)

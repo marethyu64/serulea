@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://c8vf4yp1nro40"]
+[gd_scene load_steps=13 format=3 uid="uid://c8vf4yp1nro40"]
 
 [ext_resource type="Texture2D" uid="uid://3wxchct4us62" path="res://Art Assets/scene1_bedroom.png" id="1_cgrob"]
 [ext_resource type="Texture2D" uid="uid://c61u2d00asux1" path="res://Art Assets/circular_particle.png" id="2_kkh86"]
@@ -32,22 +32,21 @@ hue_variation_max = 0.02
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6bqf4"]
 size = Vector2(20, 91)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_lsahh"]
-size = Vector2(134, 198.25)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_co1vq"]
+radius = 62.0
+height = 124.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xmjp2"]
-size = Vector2(135, 181)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0nfa5"]
-size = Vector2(88, 44)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ovv8w"]
+radius = 65.0
+height = 130.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_a2wyj"]
-radius = 61.8871
-height = 170.856
+radius = 28.9678
+height = 113.92
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_clc2a"]
-radius = 58.0
-height = 140.0
+radius = 32.0
+height = 126.0
 
 [node name="Scene1Bedroom" type="Node2D"]
 z_index = -1
@@ -156,27 +155,24 @@ position = Vector2(0, 35.5)
 shape = SubResource("RectangleShape2D_6bqf4")
 
 [node name="Collisions" type="StaticBody2D" parent="."]
+collision_layer = 4
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Collisions"]
-polygon = PackedVector2Array(524, -272, -84, -275, -82, -243, -234, -241, -368, -241, -368.465, -279.669, -407, -280, -570, -128, -570, -107, -650, -106, -652, 99, -582, 99, -583, 182, -501.932, 183.605, -501, 165, -436, 166, -437, 229, -228, 228, -226, 185, -164, 184, -165, 135, -89, 133, -89, 180, 77, 183, 76, 136, 137, 135, 138, 180, 212, 184, 213, 309, 431, 310, 515, 229, 523, -267, 669, -271, 709, 467, -721, 456, -735, -462, 662, -447, 662, -277)
+polygon = PackedVector2Array(521, -260, -66, -265, -82, -243, -234, -241, -368, -241, -407, -280, -574, -139, -654, -128, -652, 99, -582, 99, -579, 166, -452, 165, -437, 228, -229, 228, -207, 184, -167, 183, -153, 141, -104, 141, -90, 181, 73, 179, 91, 136, 122, 136, 143, 183, 190, 184, 213, 306, 431, 310, 515, 229, 521, -254, 669, -271, 709, 467, -721, 456, -735, -462, 662, -447, 662, -277)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions"]
-position = Vector2(44, -137.125)
-shape = SubResource("RectangleShape2D_lsahh")
+position = Vector2(43, -177)
+shape = SubResource("CapsuleShape2D_co1vq")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Collisions"]
-position = Vector2(330.5, -142.5)
-shape = SubResource("RectangleShape2D_xmjp2")
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Collisions"]
-position = Vector2(187, -175)
-shape = SubResource("RectangleShape2D_0nfa5")
+position = Vector2(329, -178)
+shape = SubResource("CapsuleShape2D_ovv8w")
 
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="Collisions"]
-position = Vector2(324, 285)
+position = Vector2(297, 290)
 rotation = -0.667328
 shape = SubResource("CapsuleShape2D_a2wyj")
 
 [node name="CollisionShape2D7" type="CollisionShape2D" parent="Collisions"]
-position = Vector2(466, 155)
+position = Vector2(488, 159)
 shape = SubResource("CapsuleShape2D_clc2a")

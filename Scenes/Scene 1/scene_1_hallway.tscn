@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://v5mvyp60paw4"]
+[gd_scene load_steps=12 format=3 uid="uid://v5mvyp60paw4"]
 
 [ext_resource type="Texture2D" uid="uid://cacdir4vupylu" path="res://Art Assets/scene1_hallway.png" id="1_klfgh"]
 [ext_resource type="Texture2D" uid="uid://c61u2d00asux1" path="res://Art Assets/circular_particle.png" id="2_6y8qk"]
@@ -38,12 +38,9 @@ size = Vector2(98.4443, 2.42091)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0sx0r"]
 size = Vector2(48, 175)
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_eyek5"]
-radius = 16.0
-height = 32.0
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_term3"]
-size = Vector2(221.5, 81)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_elcq8"]
+radius = 6.5
+height = 215.0
 
 [node name="Scene1Hallway" type="Node2D"]
 position = Vector2(961, 544)
@@ -159,14 +156,12 @@ position = Vector2(36, 11.5)
 shape = SubResource("RectangleShape2D_0sx0r")
 
 [node name="Collisions" type="StaticBody2D" parent="."]
+collision_layer = 4
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Collisions"]
-polygon = PackedVector2Array(652, -164, -665, -172, -668, 156, -596, 155, -596, 217, -364, 215, -366, 156, -145, 159, -145, 218, 80, 214, 82, 155, 697, 152, 699, -72, 651, -73, 652, -162, 856, -153, 851, 404, -805, 401, -787, -383, 857, -383, 855, -159)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions"]
-position = Vector2(577, -66)
-shape = SubResource("CapsuleShape2D_eyek5")
+polygon = PackedVector2Array(653, -142, 567, -142, 556, -166, -665, -172, -668, 156, -596, 155, -596, 217, -364, 215, -366, 156, -145, 159, -145, 218, 80, 214, 82, 155, 697, 152, 699, -72, 651, -73, 618, -138, 856, -153, 851, 404, -805, 401, -787, -383, 857, -383, 855, -159)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Collisions"]
-position = Vector2(-494.75, -56.5)
-shape = SubResource("RectangleShape2D_term3")
+position = Vector2(-493.5, -86.5)
+rotation = 1.57079
+shape = SubResource("CapsuleShape2D_elcq8")
