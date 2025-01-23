@@ -33,6 +33,9 @@ func _process(delta: float) -> void:
 		new_tether.queue_free()
 		new_tether = null
 		current_energy_tether = null
+		
+	if Input.is_action_just_pressed("Interact"):
+		calculation_every_fucking_thing()
 	
 	if dragging_tether:
 		drag_tether()
@@ -88,12 +91,16 @@ func link_tether(tether1,tether2):
 					if tether.group == group_to_remove: 
 						tether.group = tether1.group
 		
+		new_tether.tether1 = tether1
+		new_tether.tether2 = tether2
 		new_tether.get_node("Line2D").set_point_position(1, new_tether.to_local(tether2.global_position))
+		new_tether.tether_complete.emit()
 		tether1.tethers += 1
 		tether2.tethers += 1
 		dragging_tether = false
 		new_tether = null
 		current_energy_tether = null
+		select_tether(tether2)
 		if check_completion() == true:
 			print("finish!!!!")
 
@@ -103,15 +110,52 @@ func check_completion():
 		if tether.group == 0 or tether.group != prev_group:
 			return false
 	return true
-			
+
+func calculation_every_fucking_thing():
+	var checked_tethers = []
+	var checked_lines = []
+	group_ticket = 1
+	
+	for tether in get_children(): tether.group = 0
+	
+	for tether in get_children():
+		if checked_tethers.has(tether): continue
+		var found_line : bool = false
+		for line_2d in tether.get_children():
+			if line_2d.name == "Tether":
+				checked_tethers.append(tether)
+				found_line = true
+				if checked_lines.has(line_2d): continue
+				tether.group = group_ticket
+				find_connections(line_2d,tether,checked_tethers,checked_lines)
+				if tether.tether_line_1 != line_2d and tether.tether_line_1 != null: find_connections(tether.tether_line_1,tether,checked_tethers,checked_lines)
+				if tether.tether_line_2 != line_2d and tether.tether_line_2 != null: find_connections(tether.tether_line_2,tether,checked_tethers,checked_lines)
+				group_ticket += 1
+		#if found_line == false: tether.group = 0
+		
+func find_connections(line_2d,tether,checked_tethers,checked_lines):
+	var found_line = null
+	var found_tether = null
+	if line_2d.tether1 != tether and line_2d.tether1 != null and not checked_tethers.has(line_2d.tether1): found_tether = line_2d.tether1
+	if line_2d.tether2 != tether and line_2d.tether2 != null and not checked_tethers.has(line_2d.tether2): found_tether = line_2d.tether2
+	if found_tether != null: 
+		found_tether.group = group_ticket
+		checked_tethers.append(found_tether)
+		if tether.tether_line_1 != line_2d and tether.tether_line_1 != null and not checked_lines.has(tether.tether_line_1): found_line = tether.tether_line_1
+		if tether.tether_line_2 != line_2d and tether.tether_line_2 != null and not checked_lines.has(tether.tether_line_2): found_line = tether.tether_line_2
+		if found_line != null:
+			checked_lines.append(found_line)
+			find_connections(found_line,found_tether,checked_tethers,checked_lines)
 
 func character_swapped(swapped_character):
 	if swapped_character == "calin":
 		can_tether = false
+		for tether in get_children(): tether.visible = false
 		if dragging_tether:
 			dragging_tether = false
 			new_tether.queue_free()
 			new_tether = null
 			current_energy_tether = null
 	else: 
+		for tether in get_children(): tether.visible = true
 		can_tether = true

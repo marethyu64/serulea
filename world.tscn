@@ -59,7 +59,7 @@ position = Vector2(584, 839)
 position = Vector2(243, 624)
 
 [node name="AFuckingRock" parent="." instance=ExtResource("5_juf0x")]
-position = Vector2(467, 436)
+position = Vector2(327, 125)
 scale = Vector2(3.12, 3.12)
 
 [node name="AFuckingRock2" parent="." instance=ExtResource("5_juf0x")]

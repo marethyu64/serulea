@@ -2,16 +2,11 @@ extends StaticBody2D
 
 class_name energy_tether
 
-signal shit
-
 @export var group = 0
 @export var tethers = 0
 
+@export var tether_line_1 : Node2D
+@export var tether_line_2 : Node2D
+
 func _physics_process(delta: float) -> void:
 	$Label.text = str(group)
-
-
-func _on_shit() -> void:
-	group = 1
-	await get_tree().create_timer(1.0).timeout
-	print(group)
