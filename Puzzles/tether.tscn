@@ -10,12 +10,15 @@ script = ExtResource("1_tr7ye")
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 target_position = Vector2(51, 0)
+collision_mask = 2048
 
 [node name="Line2D" type="Line2D" parent="."]
 points = PackedVector2Array(0, 0, 0, 0)
 default_color = Color(0.332218, 0.511086, 1, 1)
 
 [node name="Area2D" type="Area2D" parent="Line2D"]
+collision_layer = 2048
+collision_mask = 2048
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Line2D/Area2D"]
 shape = SubResource("SegmentShape2D_jhvxp")

@@ -1,9 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://bhlei2hxuk8ti"]
+[gd_scene load_steps=12 format=3 uid="uid://bhlei2hxuk8ti"]
 
 [ext_resource type="Texture2D" uid="uid://d4f3xr14jpqp3" path="res://Art Assets/scene1_livingroom.png" id="1_t5x1l"]
 [ext_resource type="Texture2D" uid="uid://c61u2d00asux1" path="res://Art Assets/circular_particle.png" id="2_a4fku"]
 [ext_resource type="PackedScene" uid="uid://co1ktqgy4u5lt" path="res://coding stuff/scene_teleport.tscn" id="3_jljq7"]
-[ext_resource type="PackedScene" uid="uid://c4li0n6g1bb2r" path="res://Player/player.tscn" id="4_muw6p"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_srfco"]
 blend_mode = 1
@@ -199,6 +198,3 @@ polygon = PackedVector2Array(-243, -278, 41, -278, 66, -304, 615, -304, 614, 83,
 position = Vector2(353.75, -93.5)
 rotation = 1.5712
 shape = SubResource("CapsuleShape2D_nk4eu")
-
-[node name="Player" parent="Collisions" instance=ExtResource("4_muw6p")]
-position = Vector2(-118, 58)

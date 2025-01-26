@@ -2,6 +2,7 @@ extends Node2D
 
 signal tether_request
 signal puzzle_completion
+signal delete_tether
 
 @onready var number_of_tethers = get_child_count()
 
@@ -33,9 +34,6 @@ func _process(delta: float) -> void:
 		new_tether.queue_free()
 		new_tether = null
 		current_energy_tether = null
-		
-	if Input.is_action_just_pressed("Interact"):
-		calculation_every_fucking_thing()
 	
 	if dragging_tether:
 		drag_tether()
@@ -141,8 +139,8 @@ func find_connections(line_2d,tether,checked_tethers,checked_lines):
 	if found_tether != null: 
 		found_tether.group = group_ticket
 		checked_tethers.append(found_tether)
-		if tether.tether_line_1 != line_2d and tether.tether_line_1 != null and not checked_lines.has(tether.tether_line_1): found_line = tether.tether_line_1
-		if tether.tether_line_2 != line_2d and tether.tether_line_2 != null and not checked_lines.has(tether.tether_line_2): found_line = tether.tether_line_2
+		if found_tether.tether_line_1 != line_2d and found_tether.tether_line_1 != null and not checked_lines.has(found_tether.tether_line_1): found_line = found_tether.tether_line_1
+		if found_tether.tether_line_2 != line_2d and found_tether.tether_line_2 != null and not checked_lines.has(found_tether.tether_line_2): found_line = found_tether.tether_line_2
 		if found_line != null:
 			checked_lines.append(found_line)
 			find_connections(found_line,found_tether,checked_tethers,checked_lines)
@@ -159,3 +157,9 @@ func character_swapped(swapped_character):
 	else: 
 		for tether in get_children(): tether.visible = true
 		can_tether = true
+
+
+func _on_delete_tether(tether_to_delete):
+	tether_to_delete.queue_free()
+	await get_tree().create_timer(.1).timeout
+	calculation_every_fucking_thing()

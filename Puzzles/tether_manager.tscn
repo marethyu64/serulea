@@ -5,4 +5,5 @@
 [node name="Tether Manager" type="Node2D"]
 script = ExtResource("1_my6gp")
 
+[connection signal="delete_tether" from="." to="." method="_on_delete_tether"]
 [connection signal="tether_request" from="." to="." method="_on_tether_request"]

@@ -4,8 +4,8 @@ extends StaticBody2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	visible = false
 	Player.character_swap.connect(change_visiblity)
+	if Player.character_controlling == "Lotus": visible = true
 
 func change_visiblity(swapped_character):
 	if swapped_character == "lotus":

@@ -1,9 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://b8j44hd588xbs"]
+[gd_scene load_steps=7 format=3 uid="uid://b8j44hd588xbs"]
 
 [ext_resource type="PackedScene" uid="uid://bjoduwabj24gc" path="res://Puzzles/tether_manager.tscn" id="2_0ud2x"]
 [ext_resource type="PackedScene" uid="uid://cqo0jlkvqo2qy" path="res://Puzzles/energy_tether.tscn" id="2_jl8gt"]
 [ext_resource type="PackedScene" uid="uid://uax31eldtsre" path="res://Puzzles/encrypted_object.tscn" id="4_c4ds8"]
+[ext_resource type="PackedScene" uid="uid://co1ktqgy4u5lt" path="res://coding stuff/scene_teleport.tscn" id="5_2vl6s"]
 [ext_resource type="PackedScene" uid="uid://boe4qbcbucu3y" path="res://Puzzles/a_fucking_rock.tscn" id="5_juf0x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_axqdi"]
+size = Vector2(68.5261, 56.1417)
 
 [node name="World" type="Node2D"]
 
@@ -18,7 +22,7 @@ scale = Vector2(1, 0.993908)
 position = Vector2(1334, 548)
 scale = Vector2(1, 0.993908)
 
-[node name="Energy Tether3" parent="Tether Manager" instance=ExtResource("2_jl8gt")]
+[node name="Tim" parent="Tether Manager" instance=ExtResource("2_jl8gt")]
 position = Vector2(1151, 804)
 scale = Vector2(1, 0.993908)
 
@@ -42,7 +46,7 @@ scale = Vector2(1, 0.993908)
 position = Vector2(695, 586)
 scale = Vector2(1, 0.993908)
 
-[node name="Energy Tether9" parent="Tether Manager" instance=ExtResource("2_jl8gt")]
+[node name="Joe" parent="Tether Manager" instance=ExtResource("2_jl8gt")]
 position = Vector2(1003, 573)
 scale = Vector2(1, 0.993908)
 
@@ -70,3 +74,22 @@ position = Vector2(1026, 763)
 
 [node name="AFuckingRock4" parent="." instance=ExtResource("5_juf0x")]
 position = Vector2(876, 384)
+
+[node name="ToLotusRoom" parent="." instance=ExtResource("5_2vl6s")]
+position = Vector2(663, 56)
+enabled = true
+scene_file = "res://Scenes/Scene 1/scene_1_bedroom.tscn"
+direction = "right"
+spawn_location = "FromCorridor"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ToLotusRoom"]
+position = Vector2(1226.79, 686)
+scale = Vector2(2.0662, 2.0662)
+shape = SubResource("RectangleShape2D_axqdi")
+
+[node name="Label" type="Label" parent="ToLotusRoom"]
+offset_left = 1077.0
+offset_top = 679.0
+offset_right = 1175.0
+offset_bottom = 702.0
+text = "Step here -->"

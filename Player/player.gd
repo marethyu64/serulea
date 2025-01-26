@@ -4,7 +4,7 @@ signal character_swap
 
 @export var speed = 100
 @export var follow_mode = false
-var character_controlling = "Lotus"
+@export var character_controlling = "Lotus"
 var has_switched_to_calin = false
 
 @onready var lotus: CharacterBody2D = $Lotus

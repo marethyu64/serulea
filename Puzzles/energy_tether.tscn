@@ -9,6 +9,8 @@
 radius = 15.2643
 
 [node name="Energy Tether" type="StaticBody2D"]
+collision_layer = 2048
+collision_mask = 2048
 input_pickable = true
 script = ExtResource("1_jhqfl")
 
@@ -22,6 +24,8 @@ scale = Vector2(2.04, 2.04)
 shape = SubResource("RectangleShape2D_hbvoh")
 
 [node name="TetherDetection" type="Area2D" parent="."]
+collision_layer = 2048
+collision_mask = 2048
 input_pickable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TetherDetection"]
