@@ -1,6 +1,6 @@
-[gd_scene load_steps=13 format=3 uid="uid://c8vf4yp1nro40"]
+[gd_scene load_steps=17 format=3 uid="uid://c8vf4yp1nro40"]
 
-[ext_resource type="Texture2D" uid="uid://3wxchct4us62" path="res://Art Assets/scene1_bedroom.png" id="1_cgrob"]
+[ext_resource type="Texture2D" uid="uid://3wxchct4us62" path="res://Art Assets/Scene 1 Backgrounds/scene1_bedroom.png" id="1_cgrob"]
 [ext_resource type="Texture2D" uid="uid://c61u2d00asux1" path="res://Art Assets/circular_particle.png" id="2_kkh86"]
 [ext_resource type="PackedScene" uid="uid://co1ktqgy4u5lt" path="res://coding stuff/scene_teleport.tscn" id="3_njqvc"]
 
@@ -48,6 +48,18 @@ height = 113.92
 radius = 32.0
 height = 126.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_lcxfa"]
+radius = 25.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fhypu"]
+size = Vector2(69.28, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dnaui"]
+size = Vector2(32.4819, 37.9316)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m6lcs"]
+size = Vector2(43, 24)
+
 [node name="Scene1Bedroom" type="Node2D"]
 z_index = -1
 position = Vector2(959, 540)
@@ -63,6 +75,7 @@ position = Vector2(-3.09705, 0.0250244)
 amount = 20
 process_material = SubResource("ParticleProcessMaterial_o3gfk")
 texture = ExtResource("2_kkh86")
+lifetime = 3.0
 visibility_rect = Rect2(-600, -300, 1100, 600)
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="Background/Lighting"]
@@ -98,44 +111,6 @@ position = Vector2(-712.097, -40.975)
 scale = Vector2(96.9806, 85.605)
 color = Color(1, 0.8115, 0.61, 0.862745)
 energy = 0.27
-texture = ExtResource("2_kkh86")
-
-[node name="Red Glows" type="Node" parent="Background/Lighting"]
-
-[node name="PointLight2D2" type="PointLight2D" parent="Background/Lighting/Red Glows"]
-position = Vector2(1042, 393)
-scale = Vector2(34.4, 21.7813)
-color = Color(0.356863, 0.105882, 0.0509804, 0.643137)
-texture = ExtResource("2_kkh86")
-
-[node name="PointLight2D3" type="PointLight2D" parent="Background/Lighting/Red Glows"]
-position = Vector2(1246, 390)
-scale = Vector2(34.4, 21.7813)
-color = Color(0.356863, 0.105882, 0.0509804, 0.643137)
-texture = ExtResource("2_kkh86")
-
-[node name="PointLight2D4" type="PointLight2D" parent="Background/Lighting/Red Glows"]
-position = Vector2(359, 543)
-scale = Vector2(18.1734, 29)
-color = Color(0.36, 0.10716, 0.0504, 0.333333)
-texture = ExtResource("2_kkh86")
-
-[node name="PointLight2D5" type="PointLight2D" parent="Background/Lighting/Red Glows"]
-position = Vector2(1379, 780)
-scale = Vector2(18.1734, 20.3)
-color = Color(0.36, 0.10716, 0.0504, 0.188235)
-texture = ExtResource("2_kkh86")
-
-[node name="PointLight2D6" type="PointLight2D" parent="Background/Lighting/Red Glows"]
-position = Vector2(502, 789)
-scale = Vector2(18.1734, 20.3)
-color = Color(0.36, 0.10716, 0.0504, 0.176471)
-texture = ExtResource("2_kkh86")
-
-[node name="PointLight2D7" type="PointLight2D" parent="Background/Lighting/Red Glows"]
-position = Vector2(554, 398)
-scale = Vector2(18.1734, 20.3)
-color = Color(0.36, 0.10716, 0.0504, 0.133333)
 texture = ExtResource("2_kkh86")
 
 [node name="SpawnPoints" type="Node2D" parent="."]
@@ -176,3 +151,21 @@ shape = SubResource("CapsuleShape2D_a2wyj")
 [node name="CollisionShape2D7" type="CollisionShape2D" parent="Collisions"]
 position = Vector2(488, 159)
 shape = SubResource("CapsuleShape2D_clc2a")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Collisions"]
+position = Vector2(-374, 178)
+shape = SubResource("CircleShape2D_lcxfa")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Collisions"]
+position = Vector2(-519.733, 130.345)
+rotation = -0.281429
+shape = SubResource("RectangleShape2D_fhypu")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Collisions"]
+position = Vector2(-131, -203)
+rotation = 0.520405
+shape = SubResource("RectangleShape2D_dnaui")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="Collisions"]
+position = Vector2(-211, -218)
+shape = SubResource("RectangleShape2D_m6lcs")

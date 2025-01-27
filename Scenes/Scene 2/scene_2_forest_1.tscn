@@ -1,0 +1,127 @@
+[gd_scene load_steps=7 format=3 uid="uid://cxpgqgopbw3vn"]
+
+[ext_resource type="Texture2D" uid="uid://dkm8nbbk77wo" path="res://Art Assets/Scene 2 Backgrounds/scene2_forest1.png" id="1_ewvm2"]
+[ext_resource type="Texture2D" uid="uid://c61u2d00asux1" path="res://Art Assets/circular_particle.png" id="2_7fdeh"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_a2305"]
+blend_mode = 1
+
+[sub_resource type="Gradient" id="Gradient_v3wrx"]
+offsets = PackedFloat32Array(0, 0.213115, 0.745902, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_r7pg5"]
+gradient = SubResource("Gradient_v3wrx")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_kl5pt"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(50, 50, 1)
+spread = 1.0
+gravity = Vector3(0, 0, 0)
+tangential_accel_min = -5.0
+tangential_accel_max = 5.0
+scale_min = 0.5
+color = Color(0.4899, 0.71, 0.607287, 1)
+color_ramp = SubResource("GradientTexture1D_r7pg5")
+
+[node name="scene_2_forest1" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(960, 541)
+texture = ExtResource("1_ewvm2")
+
+[node name="Lighting" type="Node2D" parent="Background"]
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="Background/Lighting"]
+rotation = 1.21649
+scale = Vector2(1, 1)
+color = Color(0.706316, 0.828781, 0.923443, 1)
+energy = 3.0
+blend_mode = 2
+shadow_color = Color(0, 0, 0, 1)
+shadow_filter = 2
+shadow_filter_smooth = 5.0
+
+[node name="Fireflies" type="Node" parent="Background/Lighting"]
+
+[node name="Fireflies 1" type="GPUParticles2D" parent="Background/Lighting/Fireflies"]
+material = SubResource("CanvasItemMaterial_a2305")
+position = Vector2(942, 474)
+amount = 7
+process_material = SubResource("ParticleProcessMaterial_kl5pt")
+texture = ExtResource("2_7fdeh")
+lifetime = 5.0
+visibility_rect = Rect2(-50, -50, 100, 100)
+
+[node name="Yellow 3" type="PointLight2D" parent="Background/Lighting/Fireflies/Fireflies 1"]
+scale = Vector2(41.1718, 29.1173)
+color = Color(1, 0.700333, 0.38, 0.862745)
+energy = 0.3
+texture = ExtResource("2_7fdeh")
+
+[node name="Fireflies2" type="GPUParticles2D" parent="Background/Lighting/Fireflies"]
+material = SubResource("CanvasItemMaterial_a2305")
+position = Vector2(1334, 167)
+amount = 7
+process_material = SubResource("ParticleProcessMaterial_kl5pt")
+texture = ExtResource("2_7fdeh")
+lifetime = 5.0
+visibility_rect = Rect2(-50, -50, 100, 100)
+
+[node name="Yellow 3" type="PointLight2D" parent="Background/Lighting/Fireflies/Fireflies2"]
+scale = Vector2(41.1718, 29.1173)
+color = Color(1, 0.700333, 0.38, 0.862745)
+energy = 0.1
+texture = ExtResource("2_7fdeh")
+
+[node name="Fireflies3" type="GPUParticles2D" parent="Background/Lighting/Fireflies"]
+material = SubResource("CanvasItemMaterial_a2305")
+position = Vector2(723, 912)
+amount = 7
+process_material = SubResource("ParticleProcessMaterial_kl5pt")
+texture = ExtResource("2_7fdeh")
+lifetime = 5.0
+visibility_rect = Rect2(-50, -50, 100, 100)
+
+[node name="Yellow 3" type="PointLight2D" parent="Background/Lighting/Fireflies/Fireflies3"]
+scale = Vector2(41.1718, 29.1173)
+color = Color(1, 0.700333, 0.38, 0.862745)
+energy = 0.3
+texture = ExtResource("2_7fdeh")
+
+[node name="Fireflies4" type="GPUParticles2D" parent="Background/Lighting/Fireflies"]
+material = SubResource("CanvasItemMaterial_a2305")
+position = Vector2(350, 575)
+amount = 7
+process_material = SubResource("ParticleProcessMaterial_kl5pt")
+texture = ExtResource("2_7fdeh")
+lifetime = 5.0
+visibility_rect = Rect2(-50, -50, 100, 100)
+
+[node name="Yellow 3" type="PointLight2D" parent="Background/Lighting/Fireflies/Fireflies4"]
+scale = Vector2(41.1718, 29.1173)
+color = Color(1, 0.700333, 0.38, 0.862745)
+energy = 0.3
+texture = ExtResource("2_7fdeh")
+
+[node name="Fireflies5" type="GPUParticles2D" parent="Background/Lighting/Fireflies"]
+material = SubResource("CanvasItemMaterial_a2305")
+position = Vector2(1421, 641)
+amount = 7
+process_material = SubResource("ParticleProcessMaterial_kl5pt")
+texture = ExtResource("2_7fdeh")
+lifetime = 5.0
+visibility_rect = Rect2(-50, -50, 100, 100)
+
+[node name="Yellow 3" type="PointLight2D" parent="Background/Lighting/Fireflies/Fireflies5"]
+scale = Vector2(41.1718, 29.1173)
+color = Color(1, 0.700333, 0.38, 0.862745)
+energy = 0.3
+texture = ExtResource("2_7fdeh")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 4
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(1764, 3, 1687, 451, 1596, 538, 1531, 745, 1383, 750, 1292, 691, 1197, 703, 1092, 833, 932, 843, 844, 974, 657, 986, 540, 854, 430, 850, 353, 923, 303, 895, 194, 893, 196, 699, 219, 670, 212, 288, 416, 387, 757, 411, 849, 316, 910, 282, 983, 304, 1018, 274, 1043, 216, 1186, 230, 1211, 202, 1273, 1, 1761, -2, 2091, -233, -179, -241, -200, 1336, 2122, 1298, 2098, -226)

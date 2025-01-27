@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b8m8e8kgdguk8"
-path="res://.godot/imported/scene1_kitchen.png-779466c0ba24a2c06506f07bfc384d65.ctex"
+uid="uid://bc8syrlk44o0l"
+path="res://.godot/imported/lotus_placeholder.png-a9ccb901ba4f70669452bd1f0600e1d9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art Assets/scene1_kitchen.png"
-dest_files=["res://.godot/imported/scene1_kitchen.png-779466c0ba24a2c06506f07bfc384d65.ctex"]
+source_file="res://Art Assets/Characters/lotus_placeholder.png"
+dest_files=["res://.godot/imported/lotus_placeholder.png-a9ccb901ba4f70669452bd1f0600e1d9.ctex"]
 
 [params]
 

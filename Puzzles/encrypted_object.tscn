@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://uax31eldtsre"]
 
 [ext_resource type="Script" path="res://encrypted_object.gd" id="1_e5pcs"]
-[ext_resource type="Texture2D" uid="uid://o84w2ljvobo7" path="res://Art Assets/simon_lee_character.png" id="2_7xjd6"]
+[ext_resource type="Texture2D" uid="uid://o84w2ljvobo7" path="res://Art Assets/Characters/simon_lee_character.png" id="2_7xjd6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rwtlg"]
 

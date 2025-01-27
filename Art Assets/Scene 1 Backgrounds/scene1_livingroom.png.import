@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cacdir4vupylu"
-path="res://.godot/imported/scene1_hallway.png-775bdf12aacb5c3acb0d54a7a37c2004.ctex"
+uid="uid://d4f3xr14jpqp3"
+path="res://.godot/imported/scene1_livingroom.png-6bcd672057acbc0c36392b84ba996693.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art Assets/scene1_hallway.png"
-dest_files=["res://.godot/imported/scene1_hallway.png-775bdf12aacb5c3acb0d54a7a37c2004.ctex"]
+source_file="res://Art Assets/Scene 1 Backgrounds/scene1_livingroom.png"
+dest_files=["res://.godot/imported/scene1_livingroom.png-6bcd672057acbc0c36392b84ba996693.ctex"]
 
 [params]
 

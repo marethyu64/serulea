@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bc8syrlk44o0l"
-path="res://.godot/imported/lotus_placeholder.png-48b3d8414b6c2486aff6a86528b8e4cd.ctex"
+uid="uid://cacdir4vupylu"
+path="res://.godot/imported/scene1_hallway.png-86d60e06e589ae0745f713d444cc3c55.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art Assets/lotus_placeholder.png"
-dest_files=["res://.godot/imported/lotus_placeholder.png-48b3d8414b6c2486aff6a86528b8e4cd.ctex"]
+source_file="res://Art Assets/Scene 1 Backgrounds/scene1_hallway.png"
+dest_files=["res://.godot/imported/scene1_hallway.png-86d60e06e589ae0745f713d444cc3c55.ctex"]
 
 [params]
 

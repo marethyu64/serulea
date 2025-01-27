@@ -1,9 +1,9 @@
 [gd_scene load_steps=12 format=3 uid="uid://c4li0n6g1bb2r"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_4d0kg"]
-[ext_resource type="Texture2D" uid="uid://bc8syrlk44o0l" path="res://Art Assets/lotus_placeholder.png" id="1_ldxst"]
+[ext_resource type="Texture2D" uid="uid://bc8syrlk44o0l" path="res://Art Assets/Characters/lotus_placeholder.png" id="1_ldxst"]
 [ext_resource type="Script" path="res://Player/lotus.gd" id="2_sjvvq"]
-[ext_resource type="Texture2D" uid="uid://cwbluf27ru1f2" path="res://Art Assets/calin_placeholder.png" id="2_v32up"]
+[ext_resource type="Texture2D" uid="uid://cwbluf27ru1f2" path="res://Art Assets/Characters/calin_placeholder.png" id="2_v32up"]
 [ext_resource type="Script" path="res://Player/calin.gd" id="4_7nmco"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_youau"]

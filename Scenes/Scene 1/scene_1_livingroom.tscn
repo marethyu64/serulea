@@ -1,6 +1,6 @@
-[gd_scene load_steps=12 format=3 uid="uid://bhlei2hxuk8ti"]
+[gd_scene load_steps=14 format=3 uid="uid://bhlei2hxuk8ti"]
 
-[ext_resource type="Texture2D" uid="uid://d4f3xr14jpqp3" path="res://Art Assets/scene1_livingroom.png" id="1_t5x1l"]
+[ext_resource type="Texture2D" uid="uid://d4f3xr14jpqp3" path="res://Art Assets/Scene 1 Backgrounds/scene1_livingroom.png" id="1_t5x1l"]
 [ext_resource type="Texture2D" uid="uid://c61u2d00asux1" path="res://Art Assets/circular_particle.png" id="2_a4fku"]
 [ext_resource type="PackedScene" uid="uid://co1ktqgy4u5lt" path="res://coding stuff/scene_teleport.tscn" id="3_jljq7"]
 
@@ -29,6 +29,13 @@ color_ramp = SubResource("GradientTexture1D_2tpf3")
 hue_variation_min = -2.23517e-08
 hue_variation_max = 0.02
 
+[sub_resource type="Gradient" id="Gradient_7tuew"]
+offsets = PackedFloat32Array(0, 0.295082, 0.737705, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_7dpmu"]
+gradient = SubResource("Gradient_7tuew")
+
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_rf31s"]
 particle_flag_disable_z = true
 emission_shape_offset = Vector3(70, 100, 0)
@@ -39,11 +46,12 @@ initial_velocity_min = -20.0
 initial_velocity_max = 20.0
 orbit_velocity_min = 9.49949e-08
 orbit_velocity_max = 9.49949e-08
-gravity = Vector3(0, -98, 0)
+gravity = Vector3(0, -50, 0)
 scale_min = 0.1
-color = Color(1, 0.67, 0.67, 1)
-hue_variation_min = 0.03
-hue_variation_max = 0.23
+color = Color(0.562229, 0.359715, 0.643191, 1)
+color_ramp = SubResource("GradientTexture1D_7dpmu")
+hue_variation_min = -2.23517e-08
+hue_variation_max = 0.1
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0h113"]
 size = Vector2(178, 47)
@@ -71,6 +79,7 @@ scale = Vector2(1.2, 0.68)
 amount = 10
 process_material = SubResource("ParticleProcessMaterial_kmoaq")
 texture = ExtResource("2_a4fku")
+lifetime = 3.0
 visibility_rect = Rect2(-600, -300, 1100, 600)
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="Background/Lighting"]
@@ -97,67 +106,29 @@ visibility_rect = Rect2(0, 0, 140, 230)
 [node name="Fire Light" type="PointLight2D" parent="Background/Lighting"]
 position = Vector2(-104, -218)
 scale = Vector2(33.675, 29.725)
-color = Color(1, 0.700333, 0.38, 0.862745)
+color = Color(0.42, 0.2604, 0.39606, 0.862745)
 energy = 1.42
 texture = ExtResource("2_a4fku")
 
 [node name="Glow 1" type="PointLight2D" parent="Background/Lighting"]
 position = Vector2(-104, -203)
-scale = Vector2(108.808, 96.045)
+scale = Vector2(79.5999, 70.405)
 color = Color(1, 0.8115, 0.61, 0.862745)
 energy = 0.27
 texture = ExtResource("2_a4fku")
 
 [node name="Glow 2" type="PointLight2D" parent="Background/Lighting"]
-position = Vector2(613, 231)
-scale = Vector2(80.7244, 71.2557)
+position = Vector2(646, 248)
+scale = Vector2(39.2844, 43.4957)
 color = Color(1, 0.8115, 0.61, 0.862745)
-energy = 0.27
+energy = 0.2
 texture = ExtResource("2_a4fku")
 
 [node name="Glow 3" type="PointLight2D" parent="Background/Lighting"]
 position = Vector2(-654, 180)
-scale = Vector2(66.9806, 66.3974)
+scale = Vector2(47.8206, 56.4374)
 color = Color(1, 0.8115, 0.61, 0.862745)
-energy = 0.27
-texture = ExtResource("2_a4fku")
-
-[node name="Red Glows" type="Node" parent="Background/Lighting"]
-
-[node name="PointLight2D2" type="PointLight2D" parent="Background/Lighting/Red Glows"]
-position = Vector2(1608, 775)
-scale = Vector2(34.4, 21.7813)
-color = Color(0.360784, 0.105882, 0.0509804, 0.176471)
-texture = ExtResource("2_a4fku")
-
-[node name="PointLight2D3" type="PointLight2D" parent="Background/Lighting/Red Glows"]
-position = Vector2(352, 700)
-scale = Vector2(34.4, 21.7813)
-color = Color(0.360784, 0.105882, 0.0509804, 0.176471)
-texture = ExtResource("2_a4fku")
-
-[node name="PointLight2D4" type="PointLight2D" parent="Background/Lighting/Red Glows"]
-position = Vector2(863, 347)
-scale = Vector2(38.7, 25.0907)
-color = Color(0.360784, 0.105882, 0.0509804, 0.333333)
-texture = ExtResource("2_a4fku")
-
-[node name="PointLight2D5" type="PointLight2D" parent="Background/Lighting/Red Glows"]
-position = Vector2(552, 320)
-scale = Vector2(34.4, 21.7813)
-color = Color(0.360784, 0.105882, 0.0509804, 0.176471)
-texture = ExtResource("2_a4fku")
-
-[node name="PointLight2D6" type="PointLight2D" parent="Background/Lighting/Red Glows"]
-position = Vector2(1119, 260)
-scale = Vector2(34.4, 21.7813)
-color = Color(0.360784, 0.105882, 0.0509804, 0.333333)
-texture = ExtResource("2_a4fku")
-
-[node name="PointLight2D7" type="PointLight2D" parent="Background/Lighting/Red Glows"]
-position = Vector2(745, 820)
-scale = Vector2(46.1867, 16.75)
-color = Color(0.360784, 0.105882, 0.0509804, 0.176471)
+energy = 0.2
 texture = ExtResource("2_a4fku")
 
 [node name="SpawnPoints" type="Node2D" parent="."]
@@ -192,7 +163,7 @@ shape = SubResource("RectangleShape2D_rl2kb")
 collision_layer = 4
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Collisions"]
-polygon = PackedVector2Array(-243, -278, 41, -278, 66, -304, 615, -304, 614, 83, 668, 83, 665, 332, 2, 324, -15, 272, -42, 263, -548, 244, -613, 246, -612, 21, -566, 22, -565, -237, -520, -281, -499, -339, -403, -339, -398, -451, -762, -447, -755, 452, 800, 461, 801, -457, -397, -452, -396, -339, -292, -339)
+polygon = PackedVector2Array(-243, -278, 41, -278, 66, -304, 98, -304, 112.998, -281.286, 115, -162, 604, -170, 614, 83, 668, 83, 665, 332, 2, 324, -15, 272, -42, 263, -548, 244, -613, 246, -612, 21, -566, 22, -565, -237, -520, -281, -499, -339, -403, -339, -398, -451, -762, -447, -755, 452, 800, 461, 801, -457, -397, -452, -396, -339, -292, -339)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Collisions"]
 position = Vector2(353.75, -93.5)

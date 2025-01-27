@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://v5mvyp60paw4"]
 
-[ext_resource type="Texture2D" uid="uid://cacdir4vupylu" path="res://Art Assets/scene1_hallway.png" id="1_klfgh"]
+[ext_resource type="Texture2D" uid="uid://cacdir4vupylu" path="res://Art Assets/Scene 1 Backgrounds/scene1_hallway.png" id="1_klfgh"]
 [ext_resource type="Texture2D" uid="uid://c61u2d00asux1" path="res://Art Assets/circular_particle.png" id="2_6y8qk"]
 [ext_resource type="PackedScene" uid="uid://co1ktqgy4u5lt" path="res://coding stuff/scene_teleport.tscn" id="3_b186w"]
 
@@ -58,6 +58,7 @@ scale = Vector2(1.2, 0.68)
 amount = 10
 process_material = SubResource("ParticleProcessMaterial_5hggc")
 texture = ExtResource("2_6y8qk")
+lifetime = 3.0
 visibility_rect = Rect2(-600, -300, 1100, 600)
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="Background/Lighting"]
@@ -90,38 +91,6 @@ position = Vector2(690, 49)
 scale = Vector2(96.9806, 85.605)
 color = Color(1, 0.8115, 0.61, 0.862745)
 energy = 0.27
-texture = ExtResource("2_6y8qk")
-
-[node name="Red Glows" type="Node" parent="Background/Lighting"]
-
-[node name="PointLight2D2" type="PointLight2D" parent="Background/Lighting/Red Glows"]
-position = Vector2(1484, 459)
-scale = Vector2(34.4, 21.7813)
-color = Color(0.360784, 0.105882, 0.0509804, 0.176471)
-texture = ExtResource("2_6y8qk")
-
-[node name="PointLight2D3" type="PointLight2D" parent="Background/Lighting/Red Glows"]
-position = Vector2(364, 565)
-scale = Vector2(34.4, 21.7813)
-color = Color(0.360784, 0.105882, 0.0509804, 0.176471)
-texture = ExtResource("2_6y8qk")
-
-[node name="PointLight2D4" type="PointLight2D" parent="Background/Lighting/Red Glows"]
-position = Vector2(775, 406)
-scale = Vector2(34.4, 18.8907)
-color = Color(0.360784, 0.105882, 0.0509804, 0.333333)
-texture = ExtResource("2_6y8qk")
-
-[node name="PointLight2D5" type="PointLight2D" parent="Background/Lighting/Red Glows"]
-position = Vector2(491.5, 772)
-scale = Vector2(42.1, 21.7813)
-color = Color(0.360784, 0.105882, 0.0509804, 0.176471)
-texture = ExtResource("2_6y8qk")
-
-[node name="PointLight2D6" type="PointLight2D" parent="Background/Lighting/Red Glows"]
-position = Vector2(1653, 594)
-scale = Vector2(34.4, 21.7813)
-color = Color(0.360784, 0.105882, 0.0509804, 0.176471)
 texture = ExtResource("2_6y8qk")
 
 [node name="SpawnPoints" type="Node2D" parent="."]

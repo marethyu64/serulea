@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://3wxchct4us62"
-path="res://.godot/imported/scene1_bedroom.png-f4db2a67923f9ac2e7aad41c7a74271b.ctex"
+uid="uid://cwbluf27ru1f2"
+path="res://.godot/imported/calin_placeholder.png-c9cd30e91e2a7caefa87038ab0ffca90.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art Assets/scene1_bedroom.png"
-dest_files=["res://.godot/imported/scene1_bedroom.png-f4db2a67923f9ac2e7aad41c7a74271b.ctex"]
+source_file="res://Art Assets/Characters/calin_placeholder.png"
+dest_files=["res://.godot/imported/calin_placeholder.png-c9cd30e91e2a7caefa87038ab0ffca90.ctex"]
 
 [params]
 
